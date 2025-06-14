@@ -1,0 +1,14 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About Me",
+        "contact": "Contact"
+    },
+    "footer": {
+        "copyright": "© 2025 Taeyong Lee"
+    },
+    "errors": {
+        "404": "Page not found",
+        "500": "Internal server error"
+    }
+}
