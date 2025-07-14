@@ -10,5 +10,11 @@
     "errors": {
         "404": "Page non trouvée",
         "500": "Erreur interne du serveur"
+    },
+    "header": {
+        "title": "Page d'accueil de Taeyong Lee"
+    },
+    "main": {
+        "welcome": "Bienvenue sur le site web."
     }
 }
