@@ -1,0 +1,24 @@
+{
+  "author": {
+    "name": "Taeyong Lee",
+    "googleScholarName": "Taeyong Lee",
+    "scholarId": "B6KrOaoAAAAJ",
+    "profileImage": "profile.jpg",
+    "cvFile": "cv.pdf"
+  },
+  "publication": {
+    "autoFetch": true,
+    "fetchInterval": 24,
+    "maxPublications": 20,
+    "fallbackToSample": true
+  },
+  "cache": {
+    "enabled": true,
+    "maxAge": 86400
+  },
+  "social": {
+    "github": "https://github.com/holdon1221",
+    "linkedin": "https://linkedin.com/in/taeyong-lee7677/",
+    "googleScholar": "https://scholar.google.com/citations?user=B6KrOaoAAAAJ&hl=ko"
+  }
+}

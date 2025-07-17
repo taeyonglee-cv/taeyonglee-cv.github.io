@@ -1,0 +1,156 @@
+[
+  {
+    "date": "2024-10-18",
+    "title": "Constrained optimal control problem of oncolytic viruses in cancer treatment",
+    "journal": "Mathematics and Computers in Simulation",
+    "link": "https://doi.org/10.1016/j.matcom.2024.10.019",
+    "citations": 0,
+    "summary": {
+      "en": "Most models for oncolytic virotherapy overlook real-world constraints on virus dosage, limiting their clinical relevance. We formulated a constrained optimal control model with isoperimetric-type constraints and rigorously proved the existence of an optimal control using the Filippov–Cesari theorem. Beyond simulation, our work provides theoretical guarantees for optimal strategies, establishing a solid foundation for constrained cancer treatment planning. This dual theoretical–computational framework offers practical guidance for designing virus-based cancer therapies within realistic medical limits.",
+      "ko": "대부분의 종양용해바이러스요법 모델은 실제 바이러스 투여량에 대한 제약을 무시하여 임상적 관련성이 제한적이다. 우리는 등적분 형태의 제약조건을 포함한 최적제어 모델을 수립하고, Filippov–Cesari 정리를 활용하여 최적 제어의 존재를 엄밀히 증명했다. 시뮬레이션 외에도 우리의 연구는 제약 조건 하의 최적 전략에 대한 이론적 보장을 제공하여 암 치료 계획을 위한 견고한 기반을 마련했다. 이 이론–계산 이중 체계는 현실적인 의학적 한계 내에서 바이러스 기반 암 치료법 설계를 위한 실용적인 지침을 제공한다.",
+      "fr": "La plupart des modèles pour la virothérapie oncolytique négligent les contraintes du monde réel sur le dosage du virus, limitant leur pertinence clinique. Nous avons formulé un modèle de contrôle optimal contraint avec des contraintes de type isopérimétrique et avons rigoureusement prouvé l'existence d'un contrôle optimal en utilisant le théorème de Filippov–Cesari. Au-delà de la simulation, notre travail fournit des garanties théoriques pour des stratégies optimales, établissant une base solide pour la planification du traitement du cancer sous contraintes. Ce cadre théorique et computationnel offre des conseils pratiques pour la conception de thérapies anticancéreuses à base de virus dans les limites médicales réalistes."
+    },
+    "thumbnail": "./publications/1-s2.0-S0378475424004099-main.png",
+    "fetched_at": "2025-07-15T23:18:09.352Z",
+    "enhanced_at": "2025-07-16T00:20:51.034Z",
+    "pdf_file": "1-s2.0-S0378475424004099-main.pdf",
+    "formatted_date": {
+      "en": "October 18, 2024",
+      "ko": "2024.10.18",
+      "fr": "18 Octobre 2024"
+    },
+    "citations_updated_at": "2025-07-17T00:30:15.156Z"
+  },
+  {
+    "date": "2020-02-12",
+    "title": "Application of control theory in a delayed-infection and immune-evading oncolytic virotherapy",
+    "journal": "Mathematical Biosciences and Engineering",
+    "link": "https://doi.org/10.3934/mbe.2020126",
+    "citations": 15,
+    "summary": {
+      "en": "Oncolytic virotherapy holds promise for cancer treatment, but viral clearance by the immune system and non-uniform diffusion reduce its efficacy. We formulated a PDE-based spatial model incorporating tumor–virus dynamics, immune-driven viral clearance, and multi-level viral coating, applying finite-horizon optimal control to determine the ideal initial distribution of coating levels. A bimodal injection—mixing thickly coated and thinly coated virus—consistently minimized tumor volume, with the optimal composition evolving over time as thicker coatings gain importance for long-term control. This study provides the first spatially-resolved control framework for virotherapy with immune evasion and delayed infection, offering actionable guidance for designing virus formulations.",
+      "ko": "종양용해바이러스요법은 암 치료에 희망을 주지만, 면역 체계에 의한 바이러스 제거와 불균일한 확산은 그 효능을 떨어뜨린다. 우리는 종양-바이���스 역학, 면역 매개 바이러스 제거, 다단계 바이러스 코팅을 포함하는 PDE 기반 공간 모델을 구축하고, 유한 시계열 최적제어를 적용해 이상적인 초기 코팅 수준 분포를 찾았다. 두꺼운 코팅과 얇은 코팅 바이러스를 혼합한 이중 주입이 일관되게 종양 부피를 최소화했는데, 장기 관리를 위해 더 두꺼운 코팅이 중요해지면서 최적 조성이 시간에 따라 변화했다. 이 연구는 면역 회피와 지연된 감염을 가진 바이러스요법을 위한 첫 공간 제어 체계를 제공하며, 바이러스 제형 설계에 실용적인 지침을 제시한다.",
+      "fr": "La virothérapie oncolytique est prometteuse pour le traitement du cancer, mais l'élimination virale par le système immunitaire et une diffusion non uniforme réduisent son efficacité. Nous avons formulé un modèle spatial basé sur les équations aux dérivées partielles intégrant la dynamique tumeur-virus, l'élimination virale induite par le système immunitaire et un enrobage viral à plusieurs niveaux, en appliquant un contrôle optimal à horizon fini pour déterminer la répartition initiale idéale des niveaux d'enrobage. Une injection bimodale - mélangeant des virus fortement et faiblement enrobés - a systématiquement minimisé le volume de la tumeur, la composition optimale évoluant au fil du temps à mesure que les enrobages plus épais gagnent en importance pour un contrôle à long terme. Cette étude fournit le premier cadre de contrôle spatialement résolu pour la virothérapie avec évasion immunitaire et infection retardée, offrant des conseils d'action pour la conception de formulations virales."
+    },
+    "thumbnail": "./publications/10.3934_mbe.2020126.png",
+    "fetched_at": "2025-07-15T23:18:14.391Z",
+    "enhanced_at": "2025-07-16T00:21:09.007Z",
+    "pdf_file": "10.3934_mbe.2020126.pdf",
+    "formatted_date": {
+      "en": "February 12, 2020",
+      "ko": "2020.02.12",
+      "fr": "12 Février 2020"
+    },
+    "citations_updated_at": "2025-07-17T00:36:11.439Z"
+  },
+  {
+    "date": "2021-04-08",
+    "title": "Estimating the basic reproductive number of varicella in South Korea incorporating social contact patterns and seroprevalence",
+    "journal": "Human Vaccines & Immunotherapeutics",
+    "link": "https://doi.org/10.1080/21645515.2021.1898917",
+    "citations": 7,
+    "summary": {
+      "en": "Varicella causes a significant disease burden in South Korea, but the optimal vaccination strategy remains unclear. We estimated the basic reproductive number (R0) of 5.67 (95% CI: 5.33, 6.33) and the herd immunity threshold of 82.4%, integrating social contact patterns and seroprevalence data. Surprisingly, even 100% vaccine coverage may be insufficient, as the primary vaccine failure proportion must be less than 17.6% to achieve herd immunity. These findings challenge the assumption that a one-dose varicella vaccination strategy is adequate, indicating that a two-dose regimen may be necessary to effectively interrupt transmission and maintain herd immunity in South Korea.",
+      "ko": "대한민국에서 수두는 상당한 질병 부담을 야기하지만, 최적의 예방접종 전략은 아직 불분명하다. 우리는 사회적 접촉 패턴과 혈청 유병률 데이터를 사용하여 기본재생산지수 5.67 (95% CI: 5.33, 6.33)과 집단면역 임계치 82.4%를 추정했다. 놀랍게도 100% 백신 접종률이라도 충분하지 않을 수 있는데, 이는 집단면역을 달성하기 위해서는 1차 백신 실패 비율이 17.6% 미만이어야 하기 때문이다. 이러한 발견은 1회 접종 수두 백신 전략이 적절하다는 가정에 도전한다. 이는 대한민국에서 전파를 효과적으로 차단하고 집단면역을 유지하기 위해서는 2회 접종 체제가 필요할 수 있음을 시사한다.",
+      "fr": "La varicelle représente un fardeau de maladie important en Corée du Sud, mais la stratégie de vaccination optimale reste floue. Nous avons estimé le nombre de reproduction de base (R0) à 5,67 (IC à 95 % : 5,33, 6,33) et le seuil d'immunité collective à 82,4 %, en intégrant les modèles de contacts sociaux et les données de séroprévalence. De façon surprenante, même une couverture vaccinale de 100 % pourrait être insuffisante, car la proportion d'échec vaccinal primaire doit être inférieure à 17,6 % pour atteindre l'immunité collective. Ces résultats remettent en question l'hypothèse selon laquelle une stratégie de vaccination contre la varicelle en dose unique serait adéquate, indiquant qu'un schéma à deux doses pourrait être nécessaire pour interrompre efficacement la transmission et maintenir l'immunité collective en Corée du Sud."
+    },
+    "thumbnail": "./publications/Estimating the basic reproductive number of varicella in South Korea incorporating social contact patterns and seroprevalence.png",
+    "fetched_at": "2025-07-15T23:18:20.113Z",
+    "enhanced_at": "2025-07-16T00:21:25.924Z",
+    "pdf_file": "Estimating the basic reproductive number of varicella in South Korea incorporating social contact patterns and seroprevalence.pdf",
+    "formatted_date": {
+      "en": "April 8, 2021",
+      "ko": "2021.04.08",
+      "fr": "8 Avril 2021"
+    },
+    "citations_updated_at": "2025-07-17T00:36:11.439Z"
+  },
+  {
+    "date": "2021-03-29",
+    "title": "The effect of control measures on COVID-19 transmission in South Korea",
+    "journal": "PLOS ONE",
+    "link": "https://doi.org/10.1371/journal.pone.0249262",
+    "citations": 37,
+    "summary": {
+      "en": "COVID-19 spread rapidly in early 2020, and while Korea's interventions were initially successful, maintaining strict measures like social distancing and school closures imposes high social costs. We developed a calibrated age-structured SEIR model with added compartments for quarantine and isolation, fitted to KDCA-reported age-specific case data, comparing multiple intervention scenarios with differing assumptions about infectivity. Without social distancing, a second wave is predicted, while early isolation (2 vs. 3 days) reduced cumulative cases by up to 60% and deaths by up to 83%, with quarantine becoming as critical as isolation if exposed individuals are also infectious. The study demonstrates that timing and intensity of interventions critically shape outbreak trajectories, highlighting that combining early isolation and quarantine was essential for Korea's initial COVID-19 control.",
+      "ko": "2020년 초반 COVID-19가 빠르게 확산되었지만, 한국의 대응 조치는 초기에 성공적이었다. 하지만 사회적 거리두기와 학교 폐쇄와 같은 엄격한 조치를 유지하는 것은 높은 사회적 비용을 초래한다. 우리는 격리와 격리를 위한 추가 구획이 포함된 보정된 연령 구조 SEIR 모델을 개발했고, 이를 질병관리청에서 보고한 연령별 사례 데이터에 맞춰 조정했다. 다양한 전염성 가정을 바탕으로 여러 개입 시나리오를 비교했다. 사회적 거리두기 없이는 2차 유행이 예측되었지만, 조기 격리(2일 vs. 3일)는 누적 사례를 최대 60%, 사망자를 최대 83%까지 줄였다. 노출된 개인들도 전염성이 있다면 격리가 격리만큼 중요해진다. 본 연구는 개입의 시기와 강도가 유행 양상을 결정적으로 형성한다는 것을 보여주며, 조기 격리와 격리를 결합하는 것이 한국의 초기 COVID-19 통제에 필수적이었음을 강조한다.",
+      "fr": "La COVID-19 s'est propagée rapidement au début de 2020, et bien que les interventions de la Corée aient été initialement couronnées de succès, le maintien de mesures strictes comme la distanciation sociale et la fermeture des écoles impose des coûts sociaux élevés. Nous avons développé un modèle SEIR structuré par âge, étalonné et doté de compartiments supplémentaires pour la mise en quarantaine et l'isolement, ajusté aux données de cas spécifiques à l'âge rapportées par le KDCA, en comparant plusieurs scénarios d'intervention avec des hypothèses différentes sur l'infectiosité. Sans distanciation sociale, une deuxième vague est prédite, tandis que l'isolement précoce (2 vs. 3 jours) a réduit les cas cumulés jusqu'à 60% et les décès jusqu'à 83%, la mise en quarantaine devenant aussi critique que l'isolement si les personnes exposées sont également infectieuses. L'étude démontre que le moment et l'intensité des interventions façonnent de manière critique les trajectoires de l'épidémie, soulignant que la combinaison d'un isolement et d'une mise en quarantaine précoces était essentielle pour le contrôle initial de la COVID-19 en Corée."
+    },
+    "thumbnail": "./publications/journal.pone.0249262.png",
+    "fetched_at": "2025-07-15T23:18:24.783Z",
+    "enhanced_at": "2025-07-16T00:21:47.080Z",
+    "pdf_file": "journal.pone.0249262.pdf",
+    "formatted_date": {
+      "en": "March 29, 2021",
+      "ko": "2021.03.29",
+      "fr": "29 Mars 2021"
+    },
+    "citations_updated_at": "2025-07-17T00:36:11.439Z"
+  },
+  {
+    "date": "2020-10-26",
+    "title": "A mathematical model of COVID-19 transmission in a tertiary hospital and assessment of the effects of different intervention strategies",
+    "journal": "PLOS ONE",
+    "link": "https://doi.org/10.1371/journal.pone.0241169",
+    "citations": 30,
+    "summary": {
+      "en": "COVID-19 spreads rapidly in closed settings like hospitals, threatening vulnerable patients and potentially paralyzing care. We developed a detailed SEIR compartment model tailored to a 2500-bed Korean tertiary hospital, simulating interventions such as front-door screening, quarantine, early testing, and PPE usage. Early testing was the most effective measure, reducing incident cases by 80.7% over 60 days, while quarantining patients cut cases by 65.7% and universal mask-wearing yielded 66.4% reduction. This is the first hospital-specific COVID-19 transmission model incorporating staff/visitor flow and spatial structure, offering strong evidence that early testing and patient isolation are far more effective than screening alone.",
+      "ko": "COVID-19가 병원 등 밀폐된 환경에서 빠르게 확산되어 취약한 환자들을 위협하고 돌봄을 마비시킬 수 있다. 우리는 2500병상 규모의 한국 상급종합병원을 대상으로 맞춤형 SEIR 구획 모델을 개발했다. 이를 통해 입구 검역, 격리, 조기 검사, 개인보호장비 사용 등의 중재 방안을 시뮬레이션했다. 조기 검사가 가장 효과적인 조치로, 60일 동안 발생 사례를 80.7% 줄였다. 환자 격리는 65.7%, 전체 마스크 착용은 66.4% 감소 효과를 보였다. 이는 직원/방문객 동선과 공간 구조를 반영한 최초의 병원 특화 COVID-19 전파 모델로, 검역만으로는 부족하고 조기 검사와 환자 격리가 훨씬 더 효과적임을 보여준다.",
+      "fr": "La COVID-19 se propage rapidement dans les milieux fermés comme les hôpitaux, menaçant les patients vulnérables et pouvant paralyser les soins. Nous avons développé un modèle de compartiment SEIR détaillé adapté à un hôpital universitaire coréen de 2500 lits, simulant des interventions telles que le dépistage à l'entrée, la quarantaine, les tests précoces et l'utilisation d'équipements de protection individuelle (ÉPI). Les tests précoces ont été la mesure la plus efficace, réduisant les cas incidents de 80,7 % sur 60 jours, tandis que la mise en quarantaine des patients a réduit les cas de 65,7 % et le port universel de masques a entraîné une réduction de 66,4 %. Il s'agit du premier modèle de transmission de la COVID-19 spécifique à un hôpital intégrant les flux de personnel/visiteurs et la structure spatiale, offrant des preuves solides que les tests précoces et l'isolement des patients sont bien plus efficaces que le dépistage seul."
+    },
+    "thumbnail": "./publications/journal.pone.0253685.png",
+    "fetched_at": "2025-07-15T23:18:30.332Z",
+    "enhanced_at": "2025-07-16T00:22:04.173Z",
+    "pdf_file": "journal.pone.0253685.pdf",
+    "formatted_date": {
+      "en": "October 26, 2020",
+      "ko": "2020.10.26",
+      "fr": "26 Octobre 2020"
+    },
+    "citations_updated_at": "2025-07-17T00:36:11.440Z"
+  },
+  {
+    "date": "2024-02-16",
+    "title": "Prediction of effectiveness of universal rotavirus vaccination in Southwestern Vietnam based on a dynamic mathematical model",
+    "journal": "Scientific Reports",
+    "link": "https://doi.org/10.1038/s41598-024-54775-6",
+    "citations": 2,
+    "summary": {
+      "en": "Rotavirus causes a major disease burden in young children in Vietnam, but the national immunization program has yet to adopt universal RV vaccination due to concerns about lower vaccine effectiveness in low-income settings. We developed an age-stratified dynamic transmission model reflecting Vietnam's demographic change and calibrated it using hospitalization data from over 5,000 pediatric cases. Even with modest efficacy (55–85%), universal vaccination can cut hospitalizations by up to 50% over 10 years, with stronger protection in children aged 4–12 months and indirect benefits for those too young to be vaccinated. Our work supports policy decisions in LMICs, showing that rotavirus vaccination is a cost-justifiable and impactful intervention when guided by robust dynamic modeling.",
+      "ko": "로타바이러스는 베트남 어린이들에게 큰 질병 부담을 주고 있다. 하지만 국가 예방접종 프로그램은 아직 저소득 지역에서의 백신 효과 저하에 대한 우려로 인해 보편적인 로타바이러스 백신 접종을 채택하지 않았다. 우리는 베트남의 인구 변화를 반영하는 연령 층화 동적 전파 모델을 개발하고, 5,000건 이상의 소아과 입원 데이터를 사용하여 이를 보정했다. 일반적인 효능(55-85%)에도 불구하고, 보편적 백신 접종은 10년 내 입원율을 최대 50%까지 줄일 수 있으며, 4-12개월 아동에서 더 강력한 보호 효과와 접종 대상이 아닌 어린 아이들에 대한 간접적 혜택을 보일 수 있다. 우리의 연구 결과는 강력한 동적 모델링에 기반한 로타바이러스 백신 접종이 저소득 중간소득 국가에서 비용 대비 효과적이고 영향력 있는 중재 방안임을 보여준다.",
+      "fr": "Le rotavirus représente une charge de maladie majeure chez les jeunes enfants au Viêt Nam, mais le programme national de vaccination n'a pas encore adopté la vaccination universelle contre le RV en raison de préoccupations concernant une efficacité vaccinale plus faible dans les contextes à faible revenu. Nous avons développé un modèle de transmission dynamique stratifié par âge reflétant l'évolution démographique du Viêt Nam et l'avons étalonné à l'aide de données d'hospitalisation provenant de plus de 5 000 cas pédiatriques. Même avec une efficacité modeste (55-85%), la vaccination universelle peut réduire les hospitalisations jusqu'à 50% sur 10 ans, avec une protection plus forte chez les enfants âgés de 4 à 12 mois et des avantages indirects pour ceux trop jeunes pour être vaccinés. Notre travail soutient les décisions politiques dans les pays à revenu faible et intermédiaire, montrant que la vaccination contre le rotavirus est une intervention justifiable sur le plan économique et ayant un impact lorsqu'elle est guidée par une modélisation dynamique robuste."
+    },
+    "thumbnail": "./publications/s41598-024-54775-6.png",
+    "fetched_at": "2025-07-15T23:18:35.375Z",
+    "enhanced_at": "2025-07-16T00:22:23.471Z",
+    "pdf_file": "s41598-024-54775-6.pdf",
+    "formatted_date": {
+      "en": "February 16, 2024",
+      "ko": "2024.02.16",
+      "fr": "16 Février 2024"
+    },
+    "citations_updated_at": "2025-07-17T00:36:11.440Z"
+  },
+  {
+    "date": "2021-04-01",
+    "title": "The impact of two-dose varicella vaccination on varicella and herpes zoster incidence in South Korea using a mathematical model with changing population demographics",
+    "journal": "Vaccine",
+    "link": "https://doi.org/10.1016/j.vaccine.2021.03.056",
+    "citations": 16,
+    "summary": {
+      "en": "Varicella causes a significant disease burden in South Korea, and the national immunization program has yet to adopt a two-dose vaccination strategy due to concerns about population-level and birth cohort impacts. We developed an age-structured dynamic transmission model reflecting South Korea's demographic change and calibrated it using varicella and herpes zoster incidence data. Surprisingly, the additional reduction in varicella incidence attributable to a second dose was greatest (82%) under the lowest vaccine effectiveness scenario, and the optimal strategy was routine vaccination at 18 months plus a catch-up dose at 6 years, which maximized population-level and birth cohort control of varicella while also mitigating the concerning increase in herpes zoster incidence. These counterintuitive insights highlight the value of sophisticated modeling to guide varicella vaccination policy and implementation for maximum public health impact.",
+      "ko": "한국에서 수두는 상당한 질병 부담을 야기하며, 국가예방접종 프로그램은 인구 수준과 출생 코호트에 미치는 영향에 대한 우려 때문에 아직 2회 접종 전략을 채택하지 않았다. 우리는 한국의 인구 변화를 반영하는 연령 구조화된 동적 전파 모델을 개발하고 수두와 대상포진 발생률 자료를 활용해 보정했다. 놀랍게도 2차 접종으로 인한 수두 발생률 추가 감소는 백신 효능이 가장 낮은 시나리오에서 가장 컸으며(82%), 18개월 루틴 접종에 6세 추가 접종을 더한 전략이 최적으로, 이를 통해 수두에 대한 인구 수준과 출생 코호트의 통제를 극대화하면서도 우려되는 대상포진 발생률 증가를 완화할 수 있었다. 이러한 직관적이지 않은 통찰은 수두 백신 정책 및 시행을 위해 정교한 모델링의 가치를 강조한다.",
+      "fr": "La varicelle représente un fardeau de maladie important en Corée du Sud, et le programme national de vaccination n'a pas encore adopté une stratégie de vaccination à deux doses en raison de préoccupations concernant les impacts au niveau de la population et de la cohorte de naissance. Nous avons développé un modèle de transmission dynamique structuré par âge reflétant l'évolution démographique de la Corée du Sud et l'avons étalonné à l'aide de données sur l'incidence de la varicelle et du zona. De manière surprenante, la réduction supplémentaire de l'incidence de la varicelle attribuable à une deuxième dose était la plus importante (82 %) dans le scénario de plus faible efficacité vaccinale, et la stratégie optimale était une vaccination systématique à 18 mois plus une dose de rattrapage à 6 ans, ce qui maximisait le contrôle de la varicelle au niveau de la population et de la cohorte de naissance, tout en atténuant l'augmentation préoccupante de l'incidence du zona. Ces insights contre-intuitifs soulignent la valeur de la modélisation sophistiquée pour guider la politique et la mise en œuvre de la vaccination contre la varicelle afin d'avoir un impact maximal sur la santé publique."
+    },
+    "thumbnail": "./publications/suh2021.png",
+    "fetched_at": "2025-07-15T23:18:40.506Z",
+    "enhanced_at": "2025-07-16T00:22:44.791Z",
+    "pdf_file": "suh2021.pdf",
+    "formatted_date": {
+      "en": "April 1, 2021",
+      "ko": "2021.04.01",
+      "fr": "1 Avril 2021"
+    },
+    "citations_updated_at": "2025-07-17T00:36:11.440Z"
+  }
+]

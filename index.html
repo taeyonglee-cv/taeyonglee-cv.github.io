@@ -1,37 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taeyong Lee</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taeyong Lee - Scholar & Developer</title>
+    <meta name="description"
+        content="Personal homepage of Taeyong Lee, scholar and developer showcasing academic publications and projects">
+    <meta property="og:title" content="Taeyong Lee - Scholar & Developer">
+    <meta property="og:description" content="Academic publications, research projects, and professional background">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+    <nav class="language-selector">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="ko">한국어</button>
+        <button data-lang="fr">FR</button>
+    </nav>
 
-  <nav>
-    <a href="#" data-i18n-key="navbar.home">Home</a>
-    <a href="#" data-i18n-key="navbar.about">About Me</a>
-    <a href="#" data-i18n-key="navbar.contact">Contact</a>
-  </nav>
+    <header id="hero">
+        <div class="container">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="profile.jpg" alt="Taeyong Lee">
+                </div>
+                <div class="profile-info">
+                    <h1 class="name">Taeyong Lee</h1>
+                    <p class="title" data-i18n="title">Scholar & Developer</p>
+                    <p class="bio" data-i18n="bio">Passionate researcher exploring the intersection of mathematics,
+                        biology, and technology. Focused on computational modeling and innovative solutions for complex
+                        systems.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/holdon1221" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/taeyong-lee7677/" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.co.kr/citations?user=B6KrOaoAAAAJ&hl=ko"
+                            aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://drive.google.com/file/d/1-VU7d9L5fCVe_3SemyOhoLt0ZZWA_tPm/view?usp=sharing"
+                            class="cv-link" data-i18n="cv-download"><i class="fas fa-file-pdf"></i>
+                            Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <div class="language-selector">
-    <button class="lang-switcher" data-lang="en">English</button>
-    <button class="lang-switcher" data-lang="ko">한국어</button>
-    <button class="lang-switcher" data-lang="fr">Français</button>
-  </div>
+    <section id="publications" class="section">
+        <div class="container">
+            <h2 data-i18n="publications-title">Publications</h2>
+            <div class="publications-controls">
+                <div class="sort-controls">
+                    <label data-i18n="sort-by">Sort by:</label>
+                    <select id="sort-publications">
+                        <option value="date" data-i18n="sort-date">Date</option>
+                        <option value="citations" data-i18n="sort-citations">Citations</option>
+                        <option value="title" data-i18n="sort-title">Title</option>
+                    </select>
+                </div>
+            </div>
+            <div class="publications-list" id="publications-container">
+                <!-- Publications will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
 
-  <header>
-    <h1 data-i18n-key="header.title">Taeyong Lee's Homepage</h1>
-  </header>
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 data-i18n="projects-title">Projects</h2>
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
 
-  <main>
-      <p data-i18n-key="main.welcome">Welcome to the website.</p>
-  </main>
+    <footer>
+        <div class="container">
+            <p data-i18n="visitor-count">Visitors: <span id="visitor-count">0</span></p>
+            <p>&copy; 2024 Taeyong Lee. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <footer>
-    <p data-i18n-key="footer.copyright">© 2025 Taeyong Lee</p>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>

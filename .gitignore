@@ -1,29 +1,23 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-dev-debug.log
-
-# Dependency directories
+# Dependencies
 node_modules/
 
-# Environment variables
+# Environment variables (keep API keys private)
 .env
 
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# OS specific
+# Development files
+*.log
 .DS_Store
+Thumbs.db
 
-# Task files
-tasks.json
-tasks/ 
+# Editor directories
+.vscode/
+.idea/
+
+# Temporary files
+tmp/
+temp/
+
+# Note: All other files are kept for GitHub Pages deployment
+# - data/publications.json (publication data with citations)
+# - publications/*.pdf (research papers)
+# - index.html, app.js, style.css (homepage files)

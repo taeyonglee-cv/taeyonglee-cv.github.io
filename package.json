@@ -1,0 +1,37 @@
+{
+  "name": "scholar-homepage",
+  "version": "1.0.0",
+  "description": "Multilingual personal homepage for scholar and developer",
+  "main": "app.js",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "npm start",
+    "extract-pdfs": "node scripts/pdf-abstracts.js",
+    "enhance-abstracts": "node scripts/llm-abstracts.js", 
+    "update-citations": "node scripts/scholar-citation-crawler.js",
+    "build": "npm run extract-pdfs && npm run enhance-abstracts && npm run update-citations",
+    "build-fast": "npm run enhance-abstracts && npm run update-citations",
+    "verify": "node docs/verify-workflow.js",
+    "deploy": "npm run build",
+    "deploy-fast": "npm run build-fast"
+  },
+  "keywords": [
+    "homepage",
+    "scholar",
+    "multilingual",
+    "publications"
+  ],
+  "author": "Taeyong Lee",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "pdf-parse": "^1.1.1",
+    "pdf-poppler": "^0.2.1",
+    "pdf2pic": "^3.2.0",
+    "puppeteer": "^21.0.0"
+  },
+  "devDependencies": {
+    "node-cron": "^3.0.0"
+  }
+}

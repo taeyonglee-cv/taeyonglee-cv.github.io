@@ -1,0 +1,50 @@
+{
+  "en": {
+    "title": "Scholar & Developer",
+    "bio": "Passionate researcher exploring the intersection of mathematics, biology, and technology. Focused on computational modeling and innovative solutions for complex systems.",
+    "cv-download": "Download CV",
+    "publications-title": "Publications",
+    "projects-title": "Projects",
+    "sort-by": "Sort by:",
+    "sort-date": "Date",
+    "sort-citations": "Citations",
+    "sort-title": "Title",
+    "visitor-count": "Visitors:",
+    "view-abstract": "View Abstract",
+    "hide-abstract": "Hide Abstract",
+    "citations": "citations",
+    "published-in": "Published in"
+  },
+  "ko": {
+    "title": "학자 & 개발자",
+    "bio": "수학, 생물학, 기술의 교차점을 탐구하는 열정적인 연구자입니다. 복잡한 시스템을 위한 계산 모델링과 혁신적인 솔루션에 중점을 두고 있습니다.",
+    "cv-download": "이력서 다운로드",
+    "publications-title": "출판물",
+    "projects-title": "프로젝트",
+    "sort-by": "정렬 기준:",
+    "sort-date": "날짜",
+    "sort-citations": "인용수",
+    "sort-title": "제목",
+    "visitor-count": "방문자:",
+    "view-abstract": "초록 보기",
+    "hide-abstract": "초록 숨기기",
+    "citations": "인용",
+    "published-in": "게재지"
+  },
+  "fr": {
+    "title": "Chercheur & Développeur",
+    "bio": "Chercheur passionné explorant l'intersection des mathématiques, de la biologie et de la technologie. Axé sur la modélisation computationnelle et les solutions innovantes pour les systèmes complexes.",
+    "cv-download": "Télécharger CV",
+    "publications-title": "Publications",
+    "projects-title": "Projets",
+    "sort-by": "Trier par:",
+    "sort-date": "Date",
+    "sort-citations": "Citations",
+    "sort-title": "Titre",
+    "visitor-count": "Visiteurs:",
+    "view-abstract": "Voir le résumé",
+    "hide-abstract": "Masquer le résumé",
+    "citations": "citations",
+    "published-in": "Publié dans"
+  }
+}
