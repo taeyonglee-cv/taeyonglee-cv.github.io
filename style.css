@@ -216,7 +216,7 @@ body {
 }
 
 .experiences-section .section-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--primary-color);
@@ -226,7 +226,7 @@ body {
 
 /* Section Titles */
 .section-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 30px;
     color: var(--primary-color);
@@ -399,7 +399,7 @@ body {
 }
 
 .name {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     margin-bottom: 12px;
     color: var(--primary-color);
@@ -408,7 +408,7 @@ body {
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 24px;
     color: var(--text-light);
@@ -416,7 +416,7 @@ body {
 }
 
 .bio {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 15px;
     color: var(--text-light);
@@ -511,7 +511,7 @@ body {
 }
 
 .section h2 {
-    font-size: 2.75rem;
+    font-size: 2rem;
     font-weight: 800;
     margin-bottom: 64px;
     text-align: center;
