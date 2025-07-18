@@ -1,92 +1,182 @@
 # Taeyong Lee - Personal Homepage
 
-🌐 **Live Homepage**: https://holdon1221.github.io (when deployed)
+🌐 **Live Homepage**: https://taeyonglee-cv.github.io
 
-Personal homepage of **Taeyong Lee**, a researcher specializing in mathematical modeling of infectious diseases, optimal control theory, and epidemiological analysis. This homepage showcases academic publications with AI-enhanced multilingual abstracts and real-time citation tracking.
+Personal homepage of **Taeyong Lee**, showcasing academic publications, research experience, and achievements in mathematical modeling and epidemiology.
 
-## 👨‍🎓 About Taeyong Lee
-
-**Research Focus:**
-- Mathematical modeling of infectious diseases (COVID-19, varicella, rotavirus)
-- Optimal control theory applications in healthcare
-- Epidemiological analysis and vaccination strategies
-- Mathematical biology and computational epidemiology
-
-**Academic Impact:**
-- **107 total citations** across published research
-- **7 peer-reviewed publications** in international journals
-- Published in PLOS ONE, Scientific Reports, Mathematical Biosciences and Engineering, and other leading journals
-
-**Current Affiliation:** [Your institution - update in config.json]
-
-## 🚀 Homepage Features
-
-### 📊 **Dynamic Publication Display**
-- Real-time citation counts from Google Scholar profile
-- AI-enhanced abstracts in English, Korean, and French
-- Direct links to journal publications
-- Automated PDF metadata extraction
-
-### 🌐 **Multilingual Support**
-- **Korean (한국어)**: Native language support
-- **English**: International academic audience  
-- **French (Français)**: European research community
-
-### 🤖 **AI-Powered Enhancement**
-- Factual abstracts generated without hallucinated statistics
-- Domain-specific few-shot prompting for academic accuracy
-- High-quality translations with cultural adaptation
-
-## 🛠️ Technical Implementation
-
-This homepage uses a modern, automated publication management system:
-
-```bash
-npm run extract-pdfs     # Extract metadata from PDF files
-npm run enhance-abstracts # Generate AI multilingual abstracts  
-npm run update-citations # Fetch real citation counts
-npm run build           # Full pipeline automation
-```
-
-### Tech Stack:
-- **Frontend**: Vanilla JavaScript, CSS3, HTML5
-- **AI Integration**: Anthropic Claude, OpenAI GPT for abstract enhancement
-- **Citation Tracking**: Direct Google Scholar profile integration
-- **Deployment**: GitHub Pages with automated workflows
-
-## 📈 Research Highlights
-
-**Most Cited Work:**
-1. "The effect of control measures on COVID-19 transmission in South Korea" - **37 citations**
-2. "A mathematical model of COVID-19 transmission in a tertiary hospital" - **30 citations**  
-3. "The impact of two-dose varicella vaccination on varicella and herpes zoster incidence" - **16 citations**
-
-**Research Areas:**
-- COVID-19 intervention modeling and policy analysis
-- Hospital infection control optimization  
-- Vaccination strategy design using mathematical models
-- Optimal control theory for cancer treatment (oncolytic virotherapy)
-
-## 🔗 Academic Profiles
-
-- **Google Scholar**: [B6KrOaoAAAAJ](https://scholar.google.com/citations?user=B6KrOaoAAAAJ&hl=ko)
-- **GitHub**: [@holdon1221](https://github.com/holdon1221)
-- **LinkedIn**: [taeyong-lee7677](https://linkedin.com/in/taeyong-lee7677/)
-
-## 📝 Repository Structure
-
-This repository contains the source code for Taeyong Lee's personal academic homepage:
+## 📁 File Structure
 
 ```
 /
-├── index.html              # Homepage
-├── app.js                  # Frontend logic
-├── style.css               # Styling
-├── data/publications.json  # Publication data with citations
-├── publications/           # PDF files (7 papers)
-└── scripts/               # Automated processing scripts
+├── index.html                  # Main homepage (DO NOT EDIT directly)
+├── style.css                   # Styling and layout
+├── config.json                 # ✏️ EDIT THIS to update content
+├── data/
+│   └── publications.json       # ✏️ EDIT THIS to update publications  
+├── publications/               # PDF files and thumbnails
+├── docs/                      # Documentation
+└── scripts/                   # Automation scripts
 ```
+
+## ✏️ How to Edit Your Homepage Content
+
+### 🎯 Quick Edit Guide
+
+**To update your personal information, experiences, projects, achievements, or education:**
+
+1. **Open `config.json`** - This is your main content file
+2. **Edit the sections you want to change**
+3. **Save the file**
+4. **Refresh your browser** - Changes appear automatically!
+
+### 📝 Editing config.json
+
+The `config.json` file contains all your editable content:
+
+#### **Personal Info & Social Links**
+```json
+{
+  "author": {
+    "name": "Taeyong Lee",
+    "googleScholarName": "Taeyong Lee", 
+    "scholarId": "B6KrOaoAAAAJ"
+  },
+  "social": {
+    "github": "https://github.com/holdon1221",
+    "linkedin": "https://linkedin.com/in/taeyong-lee7677/",
+    "googleScholar": "https://scholar.google.com/citations?user=B6KrOaoAAAAJ&hl=ko"
+  }
+}
+```
+
+#### **Experiences Section**
+```json
+"experiences": [
+  {
+    "title": "Current Position",
+    "description": "Research focus description"
+  },
+  {
+    "title": "Previous Role", 
+    "description": "What you did here"
+  }
+]
+```
+
+#### **Ongoing Projects**
+```json
+"ongoingProject": {
+  "name": "Your Project Name",
+  "progress": 75
+}
+```
+
+#### **Achievements**
+```json
+"achievements": [
+  {
+    "name": "Award Name",
+    "period": "2024",
+    "where": "Organization/Conference"
+  }
+]
+```
+
+#### **Education**
+```json
+"educations": [
+  {
+    "degree": "PhD",
+    "university": "University Name", 
+    "period": "2018-2024",
+    "gpa": "3.8/4.0"
+  }
+]
+```
+
+### 📚 Editing Publications
+
+**To update publications:**
+
+1. **Open `data/publications.json`**
+2. **Add/edit publication entries:**
+
+```json
+{
+  "date": "2024-10-18",
+  "title": "Your Paper Title",
+  "journal": "Journal Name",
+  "link": "https://doi.org/...",
+  "citations": 5,
+  "thumbnail": "publications/your-paper.png",
+  "summary": {
+    "en": "English abstract...",
+    "ko": "Korean abstract...", 
+    "fr": "French abstract..."
+  }
+}
+```
+
+3. **Add PDF and thumbnail**: Place files in `publications/` folder
+
+### 🌐 Language Support
+
+The homepage supports 3 languages:
+- **English (EN)**: Default
+- **Korean (한국어)**: Native language
+- **French (FR)**: International audience
+
+All text content in `config.json` will automatically translate via the language buttons.
+
+## 🚀 Running Locally
+
+```bash
+# Simple local server
+python -m http.server 8000
+
+# Then visit: http://localhost:8000
+```
+
+## 📂 File Relationships
+
+```mermaid
+graph TD
+    A[index.html] --> B[config.json]
+    A --> C[data/publications.json]
+    A --> D[style.css]
+    C --> E[publications/*.pdf]
+    C --> F[publications/*.png]
+    
+    B --> G[Experiences]
+    B --> H[Projects] 
+    B --> I[Achievements]
+    B --> J[Education]
+```
+
+## 🛠️ Advanced Features
+
+### Publication Management Scripts
+```bash
+# Extract metadata from PDFs (if you have Node.js)
+node scripts/pdf-abstracts.js
+
+# Update citation counts  
+node scripts/scholar-citation-crawler.js
+
+# Generate AI abstracts
+node scripts/llm-abstracts.js
+```
+
+### Automated Workflow
+The `app.js` file contains advanced automation features, but for basic editing, you only need to modify `config.json` and `data/publications.json`.
+
+## 📞 Need Help?
+
+1. **Simple edits**: Just modify `config.json`
+2. **Publication updates**: Edit `data/publications.json`
+3. **Styling changes**: Modify `style.css` (advanced)
+4. **Structure changes**: Modify `index.html` (advanced)
 
 ---
 
-*Personal homepage and research showcase for Taeyong Lee • Mathematical epidemiologist and optimal control researcher*
+**✨ Pro Tip**: Start with small changes in `config.json` to see how the system works, then gradually make more complex modifications!

@@ -5,19 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taeyong Lee - Scholar & Developer</title>
-    <meta name="description"
-        content="Personal homepage of Taeyong Lee, scholar and developer showcasing academic publications and projects">
-    <meta property="og:title" content="Taeyong Lee - Scholar & Developer">
-    <meta property="og:description" content="Academic publications, research projects, and professional background">
-    <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#hero">Taeyong Lee</a>
+            </div>
+            <div class="nav-links">
+                <a href="#experiences" data-nav="experience">Experience</a>
+                <a href="#ongoing-project" data-nav="projects">Projects</a>
+                <a href="#publications" data-nav="publications">Publications</a>
+                <a href="#achievements" data-nav="achievements">Achievements</a>
+                <a href="#education" data-nav="education">Education</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Language Selector -->
     <nav class="language-selector">
         <button data-lang="en" class="active">EN</button>
         <button data-lang="ko">한국어</button>
@@ -26,67 +35,554 @@
 
     <header id="hero">
         <div class="container">
-            <div class="profile-section">
-                <div class="profile-image">
-                    <img src="profile.jpg" alt="Taeyong Lee">
-                </div>
-                <div class="profile-info">
+            <div class="two-column-section">
+                <div class="left-column">
                     <h1 class="name">Taeyong Lee</h1>
-                    <p class="title" data-i18n="title">Scholar & Developer</p>
-                    <p class="bio" data-i18n="bio">Passionate researcher exploring the intersection of mathematics,
-                        biology, and technology. Focused on computational modeling and innovative solutions for complex
-                        systems.</p>
+                    <p class="title">Scholar & Developer</p>
+                    <p class="bio">Passionate researcher exploring the intersection of mathematics, biology, and
+                        technology. Focused on computational modeling and innovative solutions for complex systems.</p>
+
+                    <div class="experiences-section" id="experiences">
+                        <h2 class="section-title">Experiences</h2>
+                        <ul class="experiences-list" id="experiences-container">
+                            <!-- Experiences will be loaded from config.json -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="profile-image">
+                        <img src="data/profile.jpg" alt="Taeyong Lee">
+                    </div>
                     <div class="social-links">
-                        <a href="https://github.com/holdon1221" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/taeyong-lee7677/" aria-label="LinkedIn"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://scholar.google.co.kr/citations?user=B6KrOaoAAAAJ&hl=ko"
-                            aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/holdon1221" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/taeyong-lee7677/" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:aksu7677@gmail.com" aria-label="Personal Email"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="mailto:taeyong.lee@pasteur.fr" aria-label="Professional Email"><i
+                                class="fas fa-envelope-open"></i></a>
+                        <a href="https://scholar.google.co.kr/citations?user=B6KrOaoAAAAJ&hl=ko" target="_blank"
+                            rel="noopener noreferrer" aria-label="Google Scholar"><i
+                                class="fas fa-graduation-cap"></i></a>
+                        <a href="https://orcid.org/0000-0002-1940-0210" target="_blank" rel="noopener noreferrer"
+                            aria-label="ORCID"><i class="fab fa-orcid"></i></a>
                         <a href="https://drive.google.com/file/d/1-VU7d9L5fCVe_3SemyOhoLt0ZZWA_tPm/view?usp=sharing"
-                            class="cv-link" data-i18n="cv-download"><i class="fas fa-file-pdf"></i>
-                            Download CV</a>
+                            target="_blank" rel="noopener noreferrer" class="cv-link">
+                            <i class="fas fa-file-pdf"></i> Download CV
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="publications" class="section">
+    <section id="ongoing-project" class="section">
         <div class="container">
-            <h2 data-i18n="publications-title">Publications</h2>
-            <div class="publications-controls">
-                <div class="sort-controls">
-                    <label data-i18n="sort-by">Sort by:</label>
-                    <select id="sort-publications">
-                        <option value="date" data-i18n="sort-date">Date</option>
-                        <option value="citations" data-i18n="sort-citations">Citations</option>
-                        <option value="title" data-i18n="sort-title">Title</option>
-                    </select>
-                </div>
-            </div>
-            <div class="publications-list" id="publications-container">
-                <!-- Publications will be dynamically inserted here -->
+            <h2 class="section-title">Ongoing Projects</h2>
+            <div class="ongoing-project-item" id="ongoing-project-container">
+                <!-- Ongoing project will be loaded from config.json -->
             </div>
         </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="publications" class="section">
         <div class="container">
-            <h2 data-i18n="projects-title">Projects</h2>
-            <div class="projects-grid" id="projects-container">
-                <!-- Projects will be dynamically inserted here -->
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-controls">
+                <div class="sort-controls">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select">
+                        <option value="date">Date (newest first)</option>
+                        <option value="citations">Citations</option>
+                        <option value="title">Title</option>
+                    </select>
+                </div>
+            </div>
+            <div class="publications-list" id="publications-container">
+                <!-- Publications will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-list" id="achievements-container">
+                <!-- Achievements will be loaded from config.json -->
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-list" id="education-container">
+                <!-- Education will be loaded from config.json -->
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p data-i18n="visitor-count">Visitors: <span id="visitor-count">0</span></p>
-            <p>&copy; 2024 Taeyong Lee. All rights reserved.</p>
+            <p>Visitors: <span id="visitor-count">0</span></p>
+            <p>&copy; 2025 Taeyong Lee. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script>
+        // Fixed JavaScript that actually works
+        document.addEventListener('DOMContentLoaded', async function () {
+            console.log('🚀 Page loaded, initializing...');
+
+            let publicationsData = [];
+            let configData = {};
+            let translationsData = {};
+            let currentLanguage = 'en';
+
+            // Load static content from config.json
+            function loadStaticContent(config) {
+                console.log('🔧 Loading static content from config...');
+
+                // Load experiences with clickable descriptions
+                const experiencesContainer = document.getElementById('experiences-container');
+                if (experiencesContainer && config.experiences) {
+                    experiencesContainer.innerHTML = config.experiences.map((exp, index) => {
+                        // Determine what to show in collapsed state (2 most important pieces)
+                        const mainInfo = exp.title;
+                        const locationText = typeof exp.location === 'object' ? exp.location.en : exp.location;
+                        const secondaryInfo = locationText || exp.period;
+
+                        return `
+                            <li class="experience-item" data-index="${index}">
+                                <div class="experience-title">
+                                    <div class="experience-main">
+                                        <div class="experience-job">${mainInfo}</div>
+                                        <div class="experience-secondary">${secondaryInfo}</div>
+                                    </div>
+                                    <span class="experience-period">${exp.period}</span>
+                                </div>
+                                <div class="experience-description" style="display: none;">
+                                    <div class="experience-details">
+                                        <ul class="experience-bullets">
+                                            ${(exp.description.en || []).map(item => `<li>${item}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        `;
+                    }).join('');
+
+                    // Add click functionality to toggle descriptions
+                    experiencesContainer.addEventListener('click', function (e) {
+                        const experienceItem = e.target.closest('.experience-item');
+                        if (experienceItem) {
+                            const description = experienceItem.querySelector('.experience-description');
+                            const isVisible = description.style.display !== 'none';
+
+                            // Hide all other descriptions
+                            experiencesContainer.querySelectorAll('.experience-description').forEach(desc => {
+                                desc.style.display = 'none';
+                            });
+                            experiencesContainer.querySelectorAll('.experience-item').forEach(item => {
+                                item.classList.remove('active');
+                            });
+
+                            // Toggle current description
+                            if (!isVisible) {
+                                description.style.display = 'block';
+                                experienceItem.classList.add('active');
+                            }
+                        }
+                    });
+
+                    console.log('✅ Experiences loaded with click functionality:', config.experiences.length);
+                }
+
+                // Store experiences data for language switching
+                window.experiencesData = config.experiences;
+
+                // Load ongoing projects (handle both single object and array)
+                const ongoingContainer = document.getElementById('ongoing-project-container');
+                if (ongoingContainer && config.ongoingProject) {
+                    // Handle both single project (object) and multiple projects (array)
+                    const projects = Array.isArray(config.ongoingProject) ? config.ongoingProject : [config.ongoingProject];
+
+                    ongoingContainer.innerHTML = projects.map(project => `
+                        <div class="ongoing-project-single">
+                            <div class="project-name">${project.name}</div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${project.progress}%"></div>
+                                </div>
+                                <span class="progress-text">${project.progress}%</span>
+                            </div>
+                        </div>
+                    `).join('');
+                    console.log('✅ Ongoing projects loaded:', projects.length);
+                }
+
+                // Load achievements
+                const achievementsContainer = document.getElementById('achievements-container');
+                if (achievementsContainer && config.achievements) {
+                    achievementsContainer.innerHTML = config.achievements.map(achievement => `
+                        <div class="achievement-item">
+                            <div class="achievement-name">${achievement.name}</div>
+                            <div class="achievement-period">${achievement.period}</div>
+                            <div class="achievement-where">${achievement.where}</div>
+                        </div>
+                    `).join('');
+                    console.log('✅ Achievements loaded:', config.achievements.length);
+                }
+
+                // Load education
+                const educationContainer = document.getElementById('education-container');
+                if (educationContainer && config.education) {
+                    educationContainer.innerHTML = config.education.map(education => `
+                        <div class="education-item">
+                            <div class="education-degree">${education.degree}</div>
+                            <div class="education-university">${education.university}</div>
+                            <div class="education-period">${education.period}</div>
+                            <div class="education-gpa">${education.gpa}</div>
+                        </div>
+                    `).join('');
+                    console.log('✅ Education loaded:', config.education.length);
+                }
+            }
+
+            // Update bio and title from translations
+            function updateBioFromTranslations(language) {
+                if (translationsData && translationsData[language]) {
+                    const t = translationsData[language];
+
+                    // Update title and bio
+                    const titleElement = document.querySelector('.title');
+                    const bioElement = document.querySelector('.bio');
+
+                    if (titleElement && t.title) {
+                        titleElement.textContent = t.title;
+                    }
+
+                    if (bioElement && t.bio) {
+                        bioElement.textContent = t.bio;
+                    }
+
+                    console.log('✅ Bio updated for language:', language);
+                }
+            }
+
+            try {
+                // Load config data first
+                const configResponse = await fetch('config.json');
+                configData = await configResponse.json();
+                console.log('⚙️ Config loaded successfully');
+
+                // Load translations data
+                const translationsResponse = await fetch('translations.json');
+                translationsData = await translationsResponse.json();
+                console.log('🌍 Translations loaded successfully');
+
+                // Load static content from config immediately
+                loadStaticContent(configData);
+
+                // Update bio from translations
+                updateBioFromTranslations(currentLanguage);
+
+                // Load publications data
+                const response = await fetch('data/publications.json');
+                publicationsData = await response.json();
+
+                console.log('📚 Loaded', publicationsData.length, 'publications');
+
+                // Function to render publications
+                function renderPublications(publications, language = 'en') {
+                    const container = document.getElementById('publications-container');
+                    if (container && publications.length > 0) {
+                        container.innerHTML = '';
+
+                        publications.forEach((pub, index) => {
+                            const pubElement = document.createElement('div');
+                            pubElement.className = 'publication-item';
+                            pubElement.innerHTML = `
+                                <div class="publication-header">
+                                    <img src="${pub.thumbnail}" alt="${pub.title}" class="publication-thumbnail">
+                                    <div class="publication-content">
+                                        <div class="publication-title-wrapper">
+                                            <h3 class="publication-title">${pub.title}</h3>
+                                        </div>
+                                        <div class="publication-meta">
+                                            <span><i class="fas fa-calendar"></i> ${new Date(pub.date).toLocaleDateString()}</span>
+                                            <span><i class="fas fa-book"></i> ${pub.journal}</span>
+                                            <span><i class="fas fa-quote-right"></i> ${pub.citations} citations</span>
+                                        </div>
+                                    </div>
+                                    <a href="${pub.link}" target="_blank" class="journal-icon" title="View Journal Article">
+                                        <i class="fas fa-scroll"></i>
+                                    </a>
+                                </div>
+                                <div class="publication-abstract">
+                                    ${pub.summary[language] || pub.summary.en}
+                                </div>
+                            `;
+
+                            // Add click to expand functionality
+                            pubElement.addEventListener('click', function (e) {
+                                if (!e.target.closest('a') && !e.target.closest('.journal-icon')) {
+                                    this.classList.toggle('expanded');
+                                }
+                            });
+
+                            container.appendChild(pubElement);
+                        });
+
+                        console.log('✅ Publications rendered with language:', language);
+                    } else {
+                        console.error('❌ Publications container not found or no publications');
+                    }
+                }
+
+                // Sort functionality
+                const sortSelect = document.getElementById('sort-select');
+                if (sortSelect) {
+                    sortSelect.addEventListener('change', function () {
+                        const sortBy = this.value;
+                        let sortedPublications = [...publicationsData];
+
+                        switch (sortBy) {
+                            case 'date':
+                                sortedPublications.sort((a, b) => new Date(b.date) - new Date(a.date));
+                                break;
+                            case 'citations':
+                                sortedPublications.sort((a, b) => b.citations - a.citations);
+                                break;
+                            case 'title':
+                                sortedPublications.sort((a, b) => a.title.localeCompare(b.title));
+                                break;
+                        }
+
+                        renderPublications(sortedPublications, currentLanguage);
+                    });
+                }
+
+                // Initial render with default sorting (newest first)
+                let sortedPublications = [...publicationsData];
+                sortedPublications.sort((a, b) => new Date(b.date) - new Date(a.date));
+                renderPublications(sortedPublications, currentLanguage);
+
+                // Update real visitor count
+                const visitorCount = document.getElementById('visitor-count');
+                if (visitorCount) {
+                    // Get current visitor count from localStorage
+                    let currentCount = localStorage.getItem('homepage-visitor-count');
+
+                    if (!currentCount) {
+                        // Initialize with a reasonable starting number if first time
+                        currentCount = 0; // You can adjust this starting number
+                    } else {
+                        currentCount = parseInt(currentCount);
+                    }
+
+                    // Check if this is a new visit (not within the same session)
+                    const lastVisit = localStorage.getItem('homepage-last-visit');
+                    const now = Date.now();
+                    const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+
+                    if (!lastVisit || (now - parseInt(lastVisit)) > oneHour) {
+                        // Increment count for new visit (only if more than 1 hour has passed)
+                        currentCount++;
+                        localStorage.setItem('homepage-visitor-count', currentCount.toString());
+                        localStorage.setItem('homepage-last-visit', now.toString());
+                    }
+
+                    // Display the count
+                    visitorCount.textContent = currentCount.toLocaleString();
+                }
+
+                console.log('✅ Page fully loaded');
+
+
+                // Load content based on selected language
+                function loadContentByLanguage(lang) {
+                    console.log('Loading content for language:', lang);
+                    currentLanguage = lang;
+
+                    // Use translations from translations.json
+                    const t = translationsData[lang] || translationsData.en || {};
+
+                    // Update bio and title from translations.json
+                    updateBioFromTranslations(lang);
+
+                    // Update section titles and navigation (consistent terminology)
+                    const sectionTitles = {
+                        en: {
+                            experiences: 'Experiences', 'ongoing-project': 'Ongoing Projects', publications: 'Publications',
+                            achievements: 'Achievements', education: 'Education', sortBy: 'Sort by:',
+                            // Navigation translations
+                            experience: 'Experience', projects: 'Projects', education: 'Education'
+                        },
+                        ko: {
+                            experiences: '경력', 'ongoing-project': '진행 중인 프로젝트', publications: '논문',
+                            achievements: '성과', education: '교육', sortBy: '정렬:',
+                            // Navigation translations
+                            experience: '경력', projects: '프로젝트', education: '교육'
+                        },
+                        fr: {
+                            experiences: 'Expériences', 'ongoing-project': 'Projets en cours', publications: 'Publications',
+                            achievements: 'Réalisations', education: 'Éducation', sortBy: 'Trier par:',
+                            // Navigation translations
+                            experience: 'Expérience', projects: 'Projets', education: 'Éducation'
+                        }
+                    };
+
+                    const titles = sectionTitles[lang] || sectionTitles.en;
+
+                    // Update section titles
+                    document.querySelector('.experiences-section .section-title').textContent = titles.experiences;
+                    document.querySelector('#ongoing-project .section-title').textContent = titles['ongoing-project'];
+                    document.querySelector('#publications .section-title').textContent = titles.publications;
+                    document.querySelector('#achievements .section-title').textContent = titles.achievements;
+                    document.querySelector('#education .section-title').textContent = titles.education;
+
+                    // Update navigation links
+                    document.querySelector('[data-nav="experience"]').textContent = titles.experience;
+                    document.querySelector('[data-nav="projects"]').textContent = titles.projects;
+                    document.querySelector('[data-nav="publications"]').textContent = titles.publications;
+                    document.querySelector('[data-nav="achievements"]').textContent = titles.achievements;
+                    document.querySelector('[data-nav="education"]').textContent = titles.education;
+
+                    // Update CV download button text
+                    const cvButton = document.querySelector('.cv-link');
+                    if (cvButton && t['cv-download']) {
+                        cvButton.innerHTML = `<i class="fas fa-file-pdf"></i> ${t['cv-download']}`;
+                    }
+
+                    // Update sort label
+                    const sortLabel = document.querySelector('.sort-controls label');
+                    if (sortLabel) {
+                        sortLabel.textContent = t['sort-by'] || titles.sortBy;
+                    }
+
+                    // Update experiences descriptions and locations with new language
+                    if (window.experiencesData) {
+                        const experienceItems = document.querySelectorAll('.experience-item');
+                        experienceItems.forEach((item, index) => {
+                            const exp = window.experiencesData[index];
+                            if (exp) {
+                                // Update location in secondary info
+                                if (exp.location && typeof exp.location === 'object') {
+                                    const locationText = exp.location[lang] || exp.location.en;
+                                    const secondaryElement = item.querySelector('.experience-secondary');
+                                    if (secondaryElement) {
+                                        secondaryElement.textContent = locationText;
+                                    }
+                                }
+
+                                // Update description bullets
+                                if (exp.description && exp.description[lang]) {
+                                    const bulletsContainer = item.querySelector('.experience-bullets');
+                                    if (bulletsContainer) {
+                                        bulletsContainer.innerHTML = exp.description[lang].map(bullet => `<li>${bullet}</li>`).join('');
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                    // Re-render publications with new language
+                    if (publicationsData.length > 0) {
+                        const sortSelect = document.getElementById('sort-select');
+                        const sortBy = sortSelect ? sortSelect.value : 'date';
+                        let sortedPublications = [...publicationsData];
+
+                        switch (sortBy) {
+                            case 'date':
+                                sortedPublications.sort((a, b) => new Date(b.date) - new Date(a.date));
+                                break;
+                            case 'citations':
+                                sortedPublications.sort((a, b) => b.citations - a.citations);
+                                break;
+                            case 'title':
+                                sortedPublications.sort((a, b) => a.title.localeCompare(b.title));
+                                break;
+                        }
+
+                        renderPublications(sortedPublications, lang);
+                    }
+                }
+
+            } catch (error) {
+                console.error('❌ Error loading data:', error);
+
+                // Try to load config and translations even if publications fail
+                if (Object.keys(configData).length === 0) {
+                    try {
+                        const configResponse = await fetch('config.json');
+                        configData = await configResponse.json();
+                        loadStaticContent(configData);
+                        console.log('⚙️ Config loaded in fallback');
+                    } catch (configError) {
+                        console.error('❌ Error loading config:', configError);
+                    }
+                }
+
+                if (Object.keys(translationsData).length === 0) {
+                    try {
+                        const translationsResponse = await fetch('translations.json');
+                        translationsData = await translationsResponse.json();
+                        updateBioFromTranslations(currentLanguage);
+                        console.log('🌍 Translations loaded in fallback');
+                    } catch (translationsError) {
+                        console.error('❌ Error loading translations:', translationsError);
+                    }
+                }
+
+                // Fallback: show at least one test publication
+                const container = document.getElementById('publications-container');
+                if (container) {
+                    container.innerHTML = `
+                        <div class="publication-item">
+                            <div class="publication-header">
+                                <img src="https://via.placeholder.com/80x80" alt="Test Publication" class="publication-thumbnail">
+                                <div class="publication-content">
+                                    <div class="publication-title-wrapper">
+                                        <h3 class="publication-title">Test Publication - Error Loading Data</h3>
+                                        <a href="#" class="journal-icon" title="View Journal Article">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                    <div class="publication-meta">
+                                        <span><i class="fas fa-calendar"></i> Error loading date</span>
+                                        <span><i class="fas fa-book"></i> Error loading journal</span>
+                                        <span><i class="fas fa-quote-right"></i> 0 citations</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="publication-abstract">
+                                Error loading publication data. Please check the console for details.
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            // Language buttons functionality
+            const languageButtons = document.querySelectorAll('.language-selector button');
+            languageButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    languageButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const selectedLang = this.getAttribute('data-lang');
+                    console.log('Language switched to:', selectedLang);
+
+                    // Load content based on selected language
+                    loadContentByLanguage(selectedLang);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

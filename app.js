@@ -7,6 +7,10 @@ let translations = {
     "cv-download": "Download CV",
     "publications-title": "Publications",
     "projects-title": "Projects",
+    "experiences-title": "Experiences",
+    "ongoing-project-title": "Ongoing project",
+    "achievements-title": "Achievements",
+    "educations-title": "Educations",
     "sort-by": "Sort by:",
     "sort-date": "Date",
     "sort-citations": "Citations",
@@ -23,6 +27,10 @@ let translations = {
     "cv-download": "이력서 다운로드",
     "publications-title": "출판물",
     "projects-title": "프로젝트",
+    "experiences-title": "경험",
+    "ongoing-project-title": "진행중인 프로젝트",
+    "achievements-title": "성과",
+    "educations-title": "교육",
     "sort-by": "정렬 기준:",
     "sort-date": "날짜",
     "sort-citations": "인용수",
@@ -39,6 +47,10 @@ let translations = {
     "cv-download": "Télécharger CV",
     "publications-title": "Publications",
     "projects-title": "Projets",
+    "experiences-title": "Expériences",
+    "ongoing-project-title": "Projet en cours",
+    "achievements-title": "Réalisations",
+    "educations-title": "Éducations",
     "sort-by": "Trier par:",
     "sort-date": "Date",
     "sort-citations": "Citations",
@@ -52,6 +64,20 @@ let translations = {
 };
 let publications = [];
 let projects = [];
+let config = {};
+
+// Load config from config.json
+async function loadConfig() {
+    try {
+        console.log('⚙️ Loading config...');
+        const response = await fetch('config.json');
+        config = await response.json();
+        console.log('✅ Config loaded successfully');
+    } catch (error) {
+        console.error('❌ Error loading config:', error);
+        config = {}; // fallback to empty config
+    }
+}
 
 // Load translations (now just returns immediately since they're embedded)
 async function loadTranslations() {
@@ -113,7 +139,10 @@ function applyTranslations(lang) {
     
     // Re-render dynamic content
     renderPublications();
-    renderProjects();
+    renderExperiences();
+    renderOngoingProject();
+    renderAchievements();
+    renderEducations();
 }
 
 // Dynamic publication loading
@@ -237,7 +266,12 @@ function renderPublications() {
             <div class="publication-header">
                 <img src="${pub.thumbnail}" alt="${pub.title}" class="publication-thumbnail">
                 <div class="publication-content">
-                    <a href="${pub.link}" target="_blank" class="publication-title">${pub.title}</a>
+                    <div class="publication-title-wrapper">
+                        <h3 class="publication-title">${pub.title}</h3>
+                        <a href="${pub.link}" target="_blank" class="journal-icon" title="View Journal Article">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
                     <div class="publication-meta">
                         <span><i class="fas fa-calendar"></i> ${new Date(pub.date).toLocaleDateString(currentLang)}</span>
                         <span><i class="fas fa-book"></i> ${pub.journal}</span>
@@ -251,7 +285,7 @@ function renderPublications() {
         `;
         
         pubElement.addEventListener('click', function(e) {
-            if (!e.target.closest('a')) {
+            if (!e.target.closest('a') && !e.target.closest('.journal-icon')) {
                 this.classList.toggle('expanded');
             }
         });
@@ -263,33 +297,106 @@ function renderPublications() {
     }
 }
 
-// Render projects
-function renderProjects() {
+// Render experiences
+function renderExperiences() {
     try {
-        const container = document.getElementById('projects-container');
+        const container = document.getElementById('experiences-container');
         if (!container) {
-            console.error('projects-container element not found');
+            console.error('experiences-container element not found');
             return;
         }
         container.innerHTML = '';
-        
-        projects.forEach(project => {
-            const projectElement = document.createElement('div');
-            projectElement.className = 'project-card';
-            projectElement.innerHTML = `
-                <img src="${project.image}" alt="${project.title}" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">${project.title}</h3>
-                    <p class="project-description">${project.description[currentLang]}</p>
-                    <div class="project-tags">
-                        ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-                    </div>
-                </div>
-            `;
-            container.appendChild(projectElement);
+    
+        const experiences = config.experiences || [];
+        experiences.forEach((exp, index) => {
+            const expElement = document.createElement('li');
+            expElement.textContent = exp.title;
+            container.appendChild(expElement);
         });
     } catch (error) {
-        console.error('Error rendering projects:', error);
+        console.error('Error rendering experiences:', error);
+    }
+}
+
+// Render ongoing project
+function renderOngoingProject() {
+    try {
+        const container = document.getElementById('ongoing-project-container');
+        if (!container) {
+            console.error('ongoing-project-container element not found');
+            return;
+        }
+        container.innerHTML = '';
+    
+        const project = config.ongoingProject || {};
+        const projectElement = document.createElement('div');
+        projectElement.className = 'ongoing-project-item';
+        projectElement.innerHTML = `
+            <div class="project-name">${project.name || 'No ongoing project'}</div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${project.progress || 0}%"></div>
+                </div>
+                <span class="progress-text">${project.progress || 0}%</span>
+            </div>
+        `;
+        
+        container.appendChild(projectElement);
+    } catch (error) {
+        console.error('Error rendering ongoing project:', error);
+    }
+}
+
+// Render achievements
+function renderAchievements() {
+    try {
+        const container = document.getElementById('achievements-container');
+        if (!container) {
+            console.error('achievements-container element not found');
+            return;
+        }
+        container.innerHTML = '';
+    
+        const achievements = config.achievements || [];
+        achievements.forEach((achievement, index) => {
+            const achievementElement = document.createElement('div');
+            achievementElement.className = 'achievement-item';
+            achievementElement.innerHTML = `
+                <div class="achievement-name">${achievement.name}</div>
+                <div class="achievement-period">${achievement.period}</div>
+                <div class="achievement-where">${achievement.where}</div>
+            `;
+            container.appendChild(achievementElement);
+        });
+    } catch (error) {
+        console.error('Error rendering achievements:', error);
+    }
+}
+
+// Render educations
+function renderEducations() {
+    try {
+        const container = document.getElementById('educations-container');
+        if (!container) {
+            console.error('educations-container element not found');
+            return;
+        }
+        container.innerHTML = '';
+    
+        const educations = config.educations || [];
+        educations.forEach((education, index) => {
+            const educationElement = document.createElement('div');
+            educationElement.className = 'education-item';
+            educationElement.innerHTML = `
+                <div class="education-degree">${education.degree}</div>
+                <div class="education-university">${education.university}</div>
+                <div class="education-period">${education.period}</div>
+                <div class="education-gpa">${education.gpa}</div>
+            `;
+            container.appendChild(educationElement);
+        });
+    } catch (error) {
+        console.error('Error rendering educations:', error);
     }
 }
 
@@ -331,6 +438,7 @@ async function init() {
     try {
         console.log('Initializing app...');
         await loadTranslations();
+        await loadConfig();
         
         // Set initial language
         const detectedLang = detectLanguage();
@@ -339,13 +447,16 @@ async function init() {
         
         // Load publication data dynamically
         publications = await loadPublications();
-        projects = [...sampleProjects];
+        projects = []; // No projects for now
         
         console.log(`📊 Loaded ${publications.length} publications`);
         
         // Render content
         renderPublications();
-        renderProjects();
+        renderExperiences();
+        renderOngoingProject();
+        renderAchievements();
+        renderEducations();
         
         // Update visitor count
         updateVisitorCount();

@@ -1,7 +1,7 @@
 {
   "en": {
     "title": "Scholar & Developer",
-    "bio": "Passionate researcher exploring the intersection of mathematics, biology, and technology. Focused on computational modeling and innovative solutions for complex systems.",
+    "bio": "I aim to build mathematical models that are both predictive and explanatory. My research focuses on optimizing intervention strategies for infectious diseases, using tools like ODEs, stochastic models, and agent-based simulations. I strive to generate policy-relevant insights that can guide real-world public health decision-making at national and global levels.",
     "cv-download": "Download CV",
     "publications-title": "Publications",
     "projects-title": "Projects",
@@ -17,9 +17,9 @@
   },
   "ko": {
     "title": "학자 & 개발자",
-    "bio": "수학, 생물학, 기술의 교차점을 탐구하는 열정적인 연구자입니다. 복잡한 시스템을 위한 계산 모델링과 혁신적인 솔루션에 중점을 두고 있습니다.",
+    "bio": "저는 예측력과 설명력을 모두 갖춘 수리모델을 만드는 것을 목표로 합니다. 감염병 개입 전략의 최적화를 중심으로, ODE, 확률모델, 에이전트 기반 시뮬레이션을 활용한 연구를 수행하고 있습니다. 실제 공중보건 정책에 기여할 수 있는 모델을 개발하는 것이 제 연구의 핵심 방향입니다.",
     "cv-download": "이력서 다운로드",
-    "publications-title": "출판물",
+    "publications-title": "논문",
     "projects-title": "프로젝트",
     "sort-by": "정렬 기준:",
     "sort-date": "날짜",
@@ -33,7 +33,7 @@
   },
   "fr": {
     "title": "Chercheur & Développeur",
-    "bio": "Chercheur passionné explorant l'intersection des mathématiques, de la biologie et de la technologie. Axé sur la modélisation computationnelle et les solutions innovantes pour les systèmes complexes.",
+    "bio": "Je vise à développer des modèles mathématiques à la fois prédictifs et explicatifs. Mes recherches portent sur l’optimisation des stratégies d’intervention contre les maladies infectieuses, en utilisant des outils tels que les équations différentielles ordinaires, les modèles stochastiques et les simulations à base d’agents. Mon objectif est de produire des connaissances exploitables pour orienter les décisions de santé publique à l’échelle nationale et internationale.",
     "cv-download": "Télécharger CV",
     "publications-title": "Publications",
     "projects-title": "Projets",
