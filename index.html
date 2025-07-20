@@ -16,22 +16,55 @@
             <div class="nav-brand">
                 <a href="#hero">Taeyong Lee</a>
             </div>
-            <div class="nav-links">
+            <div class="nav-links desktop-nav">
                 <a href="#experiences" data-nav="experience">Experience</a>
                 <a href="#ongoing-project" data-nav="projects">Projects</a>
                 <a href="#publications" data-nav="publications">Publications</a>
                 <a href="#achievements" data-nav="achievements">Achievements</a>
                 <a href="#education" data-nav="education">Education</a>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Language Selector -->
-    <nav class="language-selector">
+    <!-- Language Selector (Desktop only) -->
+    <nav class="language-selector desktop-only">
         <button data-lang="en" class="active">EN</button>
         <button data-lang="ko">한국어</button>
         <button data-lang="fr">FR</button>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <h3>Menu</h3>
+                <button class="mobile-menu-close" aria-label="Close mobile menu">&times;</button>
+            </div>
+            
+            <div class="mobile-menu-section">
+                <h4>Navigation</h4>
+                <a href="#experiences" data-nav="experience" class="mobile-menu-link">Experience</a>
+                <a href="#ongoing-project" data-nav="projects" class="mobile-menu-link">Projects</a>
+                <a href="#publications" data-nav="publications" class="mobile-menu-link">Publications</a>
+                <a href="#achievements" data-nav="achievements" class="mobile-menu-link">Achievements</a>
+                <a href="#education" data-nav="education" class="mobile-menu-link">Education</a>
+            </div>
+            
+            <div class="mobile-menu-section">
+                <h4>Language</h4>
+                <div class="mobile-language-selector">
+                    <button data-lang="en" class="mobile-lang-btn active">English</button>
+                    <button data-lang="ko" class="mobile-lang-btn">한국어</button>
+                    <button data-lang="fr" class="mobile-lang-btn">Français</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header id="hero">
         <div class="container">
@@ -399,6 +432,94 @@
                 }
 
                 console.log('✅ Page fully loaded');
+                
+                // Initialize mobile menu
+                initializeMobileMenu();
+                
+                // DEBUG: Test mobile layout detection
+                function testMobileLayout() {
+                    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+                    console.log('📱 Mobile layout active:', isMobile);
+                    console.log('🖥️ Window width:', window.innerWidth);
+                    
+                    if (isMobile) {
+                        console.log('✅ Mobile CSS should be active - look for:');
+                        console.log('  - Red border at top of page');
+                        console.log('  - Light blue navigation bar');
+                        console.log('  - Yellow hamburger menu button');
+                        console.log('  - Light green hero section');
+                    }
+                }
+                
+                testMobileLayout();
+                window.addEventListener('resize', testMobileLayout);
+                
+                function initializeMobileMenu() {
+                    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+                    const mobileMenuOverlay = document.getElementById('mobile-menu');
+                    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+                    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+                    const mobileLangBtns = document.querySelectorAll('.mobile-lang-btn');
+                    
+                    // Toggle mobile menu
+                    if (mobileMenuToggle) {
+                        mobileMenuToggle.addEventListener('click', () => {
+                            mobileMenuOverlay.style.display = 'block';
+                            document.body.style.overflow = 'hidden';
+                        });
+                    }
+                    
+                    // Close mobile menu
+                    if (mobileMenuClose) {
+                        mobileMenuClose.addEventListener('click', closeMobileMenu);
+                    }
+                    
+                    // Close menu when clicking overlay
+                    if (mobileMenuOverlay) {
+                        mobileMenuOverlay.addEventListener('click', (e) => {
+                            if (e.target === mobileMenuOverlay) {
+                                closeMobileMenu();
+                            }
+                        });
+                    }
+                    
+                    // Close menu when clicking navigation links
+                    mobileMenuLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            closeMobileMenu();
+                        });
+                    });
+                    
+                    // Mobile language selector
+                    mobileLangBtns.forEach((btn, index) => {
+                        console.log(`🔧 Setting up mobile lang button ${index}:`, btn);
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const lang = btn.getAttribute('data-lang');
+                            console.log(`🌐 Mobile language clicked: ${lang}`);
+                            
+                            // Update mobile language buttons
+                            mobileLangBtns.forEach(b => b.classList.remove('active'));
+                            btn.classList.add('active');
+                            
+                            // Update desktop language buttons
+                            const desktopLangBtns = document.querySelectorAll('.language-selector button');
+                            desktopLangBtns.forEach(b => b.classList.remove('active'));
+                            const desktopBtn = document.querySelector(`.language-selector button[data-lang="${lang}"]`);
+                            if (desktopBtn) desktopBtn.classList.add('active');
+                            
+                            // Change language using the existing function
+                            console.log('🔄 Calling loadContentByLanguage...');
+                            loadContentByLanguage(lang);
+                            closeMobileMenu();
+                        });
+                    });
+                    
+                    function closeMobileMenu() {
+                        mobileMenuOverlay.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                }
 
 
                 // Load content based on selected language
@@ -443,12 +564,12 @@
                     document.querySelector('#achievements .section-title').textContent = titles.achievements;
                     document.querySelector('#education .section-title').textContent = titles.education;
 
-                    // Update navigation links
-                    document.querySelector('[data-nav="experience"]').textContent = titles.experience;
-                    document.querySelector('[data-nav="projects"]').textContent = titles.projects;
-                    document.querySelector('[data-nav="publications"]').textContent = titles.publications;
-                    document.querySelector('[data-nav="achievements"]').textContent = titles.achievements;
-                    document.querySelector('[data-nav="education"]').textContent = titles.education;
+                    // Update navigation links (both desktop and mobile)
+                    document.querySelectorAll('[data-nav="experience"]').forEach(el => el.textContent = titles.experience);
+                    document.querySelectorAll('[data-nav="projects"]').forEach(el => el.textContent = titles.projects);
+                    document.querySelectorAll('[data-nav="publications"]').forEach(el => el.textContent = titles.publications);
+                    document.querySelectorAll('[data-nav="achievements"]').forEach(el => el.textContent = titles.achievements);
+                    document.querySelectorAll('[data-nav="education"]').forEach(el => el.textContent = titles.education);
 
                     // Update CV download button text
                     const cvButton = document.querySelector('.cv-link');
