@@ -40,6 +40,9 @@ jobs:
         with:
           name: updated-data
           path: data
+      - name: Overwrite publications.json in repo
+        run: |
+          cp data/publications.json ./data/publications.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
