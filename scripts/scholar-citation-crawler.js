@@ -9,7 +9,10 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+
+puppeteer.use(StealthPlugin());
 
 class ScholarCitationCrawler {
     constructor() {
@@ -45,6 +48,8 @@ class ScholarCitationCrawler {
         }
     }
 
+    puppeteer.use(StealthPlugin());
+
     async fetchScholarProfile(scholarId) {
         const url = `https://scholar.google.com/citations?user=${scholarId}&hl=en&pagesize=100`;
         console.log(`🔍 Fetching Google Scholar profile with Puppeteer: ${url}`);
@@ -55,15 +60,13 @@ class ScholarCitationCrawler {
                 args: ['--no-sandbox', '--disable-setuid-sandbox'],
             });
             const page = await browser.newPage();
+    
             await page.setUserAgent(
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
             );
     
             await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-    
             const html = await page.content();
-            console.log(html);
-
             await browser.close();
     
             console.log(`✅ Successfully fetched profile (${html.length} characters)`);
