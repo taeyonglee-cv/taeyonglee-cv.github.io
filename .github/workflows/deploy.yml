@@ -1,10 +1,11 @@
-# .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # main 브랜치에 push 될 때마다 실행
+      - main
+  schedule:
+    - cron: '0 0 * * *'
 
 permissions:
   contents: read
@@ -12,7 +13,25 @@ permissions:
   id-token: write
 
 jobs:
+  update-citations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Update citation counts
+        run: node scripts/scholar-citation-crawler.js
+
   deploy:
+    needs: update-citations
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
