@@ -9,10 +9,10 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const puppeteer = require('puppeteer-extra');
-const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+// const puppeteer = require('puppeteer-extra');
+// const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 
-puppeteer.use(StealthPlugin());
+// puppeteer.use(StealthPlugin());
 
 class ScholarCitationCrawler {
     constructor() {
@@ -48,85 +48,86 @@ class ScholarCitationCrawler {
         }
     }
 
-    async fetchScholarProfile(scholarId) {
-        const url = `https://scholar.google.com/citations?user=${scholarId}&hl=en&pagesize=100`;
-        console.log(`🔍 Fetching Google Scholar profile with Puppeteer: ${url}`);
-    
-        try {
-            const browser = await puppeteer.launch({
-                headless: 'new',
-                args: ['--no-sandbox', '--disable-setuid-sandbox'],
-            });
-            const page = await browser.newPage();
-    
-            await page.setUserAgent(
-                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-            );
-    
-            await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-            const html = await page.content();
-            await browser.close();
-    
-            console.log(`✅ Successfully fetched profile (${html.length} characters)`);
-            return html;
-        } catch (error) {
-            console.error(`❌ Puppeteer error: ${error.message}`);
-            return '';
-        }
-    }
-    // // Fetch the Google Scholar profile page
     // async fetchScholarProfile(scholarId) {
-    //     return new Promise((resolve) => {
-    //         const url = `https://scholar.google.com/citations?user=${scholarId}&hl=en&pagesize=100`;
-    //         console.log(`🔍 Fetching Google Scholar profile: ${scholarId}`);
-
-    //         const options = {
-    //             hostname: 'scholar.google.com',
-    //             port: 443,
-    //             path: `/citations?user=${scholarId}&hl=en&pagesize=100`,
-    //             method: 'GET',
-    //             headers: {
-    //                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-    //                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-    //                 'Accept-Language': 'en-US,en;q=0.5',
-    //                 'Accept-Encoding': 'identity',
-    //                 'Connection': 'keep-alive',
-    //                 'Upgrade-Insecure-Requests': '1'
-    //             }
-    //         };
-
-    //         const req = https.request(options, (res) => {
-    //             let data = '';
-                
-    //             res.on('data', (chunk) => {
-    //                 data += chunk;
-    //             });
-                
-    //             res.on('end', () => {
-    //                 if (res.statusCode === 200) {
-    //                     console.log(`✅ Successfully fetched profile (${data.length} characters)`);
-    //                     resolve(data);
-    //                 } else {
-    //                     console.log(`❌ Error fetching profile: HTTP ${res.statusCode}`);
-    //                     resolve('');
-    //                 }
-    //             });
+    //     const url = `https://scholar.google.com/citations?user=${scholarId}&hl=en&pagesize=100`;
+    //     console.log(`🔍 Fetching Google Scholar profile with Puppeteer: ${url}`);
+    
+    //     try {
+    //         const browser = await puppeteer.launch({
+    //             headless: 'new',
+    //             args: ['--no-sandbox', '--disable-setuid-sandbox'],
     //         });
-
-    //         req.on('error', (error) => {
-    //             console.log(`❌ Request error: ${error.message}`);
-    //             resolve('');
-    //         });
-
-    //         req.setTimeout(15000, () => {
-    //             console.log(`⏰ Request timeout`);
-    //             req.destroy();
-    //             resolve('');
-    //         });
-
-    //         req.end();
-    //     });
+    //         const page = await browser.newPage();
+    
+    //         await page.setUserAgent(
+    //             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    //         );
+    
+    //         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    //         const html = await page.content();
+    //         await browser.close();
+    
+    //         console.log(`✅ Successfully fetched profile (${html.length} characters)`);
+    //         return html;
+    //     } catch (error) {
+    //         console.error(`❌ Puppeteer error: ${error.message}`);
+    //         return '';
+    //     }
     // }
+    
+    // Fetch the Google Scholar profile page
+    async fetchScholarProfile(scholarId) {
+        return new Promise((resolve) => {
+            const url = `https://scholar.google.com/citations?user=${scholarId}&hl=en&pagesize=100`;
+            console.log(`🔍 Fetching Google Scholar profile: ${scholarId}`);
+
+            const options = {
+                hostname: 'scholar.google.com',
+                port: 443,
+                path: `/citations?user=${scholarId}&hl=en&pagesize=100`,
+                method: 'GET',
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                    'Accept-Language': 'en-US,en;q=0.5',
+                    'Accept-Encoding': 'identity',
+                    'Connection': 'keep-alive',
+                    'Upgrade-Insecure-Requests': '1'
+                }
+            };
+
+            const req = https.request(options, (res) => {
+                let data = '';
+                
+                res.on('data', (chunk) => {
+                    data += chunk;
+                });
+                
+                res.on('end', () => {
+                    if (res.statusCode === 200) {
+                        console.log(`✅ Successfully fetched profile (${data.length} characters)`);
+                        resolve(data);
+                    } else {
+                        console.log(`❌ Error fetching profile: HTTP ${res.statusCode}`);
+                        resolve('');
+                    }
+                });
+            });
+
+            req.on('error', (error) => {
+                console.log(`❌ Request error: ${error.message}`);
+                resolve('');
+            });
+
+            req.setTimeout(15000, () => {
+                console.log(`⏰ Request timeout`);
+                req.destroy();
+                resolve('');
+            });
+
+            req.end();
+        });
+    }
 
     // Extract publications and citations from Scholar profile HTML
     parseScholarProfile(html) {
