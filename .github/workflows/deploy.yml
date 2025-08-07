@@ -13,33 +13,35 @@ permissions:
   id-token: write
   
 jobs:
+  update-citations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: node scripts/scholar-citation-crawler.js
+      - name: Save updated publications.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: updated-data
+          path: data/publications.json
+
   deploy:
+    needs: update-citations
     runs-on: ubuntu-latest
     environment:
       name: github-pages
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - name: Download updated publications.json
+        uses: actions/download-artifact@v4
         with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Update citation counts
-        run: node scripts/scholar-citation-crawler.js
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          name: updated-data
+          path: data
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: .
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-
+      - uses: actions/deploy-pages@v4
