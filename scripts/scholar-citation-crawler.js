@@ -62,7 +62,6 @@ class ScholarCitationCrawler {
             await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
     
             const html = await page.content();
-            import fs from 'fs';
 
             fs.writeFileSync('scholar-profile.html', html, 'utf8');
 
