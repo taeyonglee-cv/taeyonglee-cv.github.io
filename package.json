@@ -22,6 +22,7 @@
   "author": "Taeyong Lee",
   "license": "MIT",
   "dependencies": {
-    "pdf-parse": "^1.1.1"
+    "pdf-parse": "^1.1.1",
+    "puppeteer": "^21.0.0"
   }
 }
