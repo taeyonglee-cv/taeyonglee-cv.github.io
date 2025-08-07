@@ -11,10 +11,12 @@ permissions:
   contents: read
   pages: write
   id-token: write
-
+  
 jobs:
-  update-citations:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,15 +32,6 @@ jobs:
       - name: Update citation counts
         run: node scripts/scholar-citation-crawler.js
 
-  deploy:
-    needs: update-citations
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -49,3 +42,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+
