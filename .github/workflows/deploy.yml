@@ -39,10 +39,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: updated-data
-          path: data
+          path: tmp
       - name: Overwrite publications.json in repo
         run: |
-          cp data/publications.json ./data/publications.json
+          mkdir -p data
+          cp tmp/publications.json data/publications.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
