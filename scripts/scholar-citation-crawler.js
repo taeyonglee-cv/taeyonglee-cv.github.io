@@ -48,8 +48,6 @@ class ScholarCitationCrawler {
         }
     }
 
-    puppeteer.use(StealthPlugin());
-
     async fetchScholarProfile(scholarId) {
         const url = `https://scholar.google.com/citations?user=${scholarId}&hl=en&pagesize=100`;
         console.log(`🔍 Fetching Google Scholar profile with Puppeteer: ${url}`);
