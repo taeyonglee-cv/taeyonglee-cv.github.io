@@ -17,11 +17,112 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install
-      - run: node scripts/scholar-citation-crawler.js
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run scholar crawler with retry logic
+        run: |
+          echo "Starting Google Scholar citation update..."
+          
+          # 기존 데이터가 있는지 확인하고 백업
+          if [ -f data/publications.json ]; then
+            echo "📋 Found existing publications.json, creating backup"
+            cp data/publications.json data/publications.json.backup
+          else
+            echo "📁 No existing publications.json found"
+            mkdir -p data
+            echo "[]" > data/publications.json
+          fi
+          
+          # 3번 시도
+          SUCCESS=false
+          for i in {1..3}; do
+            echo ""
+            echo "🔄 Attempt $i/3 to fetch Google Scholar data..."
+            
+            if node scripts/scholar-citation-crawler.js; then
+              echo "✅ Successfully fetched and updated citation data"
+              SUCCESS=true
+              break
+            else
+              echo "❌ Attempt $i failed"
+              
+              # 마지막 시도가 아니면 대기
+              if [ $i -lt 3 ]; then
+                WAIT_TIME=$((30 + i * 15))  # 30초, 45초, 마지막엔 대기 안함
+                echo "⏳ Waiting ${WAIT_TIME} seconds before next attempt..."
+                sleep $WAIT_TIME
+              fi
+            fi
+          done
+          
+          # 모든 시도가 실패한 경우
+          if [ "$SUCCESS" = false ]; then
+            echo ""
+            echo "⚠️  All attempts failed, but continuing with existing data"
+            
+            # 백업 파일이 있으면 복원
+            if [ -f data/publications.json.backup ]; then
+              echo "📋 Restoring from backup"
+              cp data/publications.json.backup data/publications.json
+            fi
+            
+            # 파일이 아예 없으면 빈 배열 생성
+            if [ ! -f data/publications.json ]; then
+              echo "📝 Creating empty publications file"
+              echo "[]" > data/publications.json
+            fi
+          fi
+          
+          # 백업 파일 정리
+          rm -f data/publications.json.backup
+          
+          # 최종 결과 출력
+          echo ""
+          echo "📊 Final publications.json status:"
+          if [ -f data/publications.json ]; then
+            echo "✅ File exists ($(wc -c < data/publications.json) bytes)"
+            echo "📖 Content preview:"
+            head -n 5 data/publications.json
+          else
+            echo "❌ File does not exist"
+            exit 1
+          fi
+        continue-on-error: false  # 파일이 없으면 실패
+        
+      - name: Verify publications data
+        run: |
+          echo "🔍 Verifying publications.json..."
+          
+          if [ ! -f data/publications.json ]; then
+            echo "❌ publications.json not found!"
+            exit 1
+          fi
+          
+          # JSON 유효성 검사
+          if ! python3 -m json.tool data/publications.json > /dev/null 2>&1; then
+            echo "❌ Invalid JSON format!"
+            echo "📄 File content:"
+            cat data/publications.json
+            exit 1
+          fi
+          
+          # 파일 크기 확인
+          FILE_SIZE=$(wc -c < data/publications.json)
+          echo "📏 File size: $FILE_SIZE bytes"
+          
+          if [ $FILE_SIZE -lt 2 ]; then
+            echo "❌ File too small (likely empty or corrupted)"
+            exit 1
+          fi
+          
+          echo "✅ publications.json is valid"
+          
       - name: Save updated publications.json
         uses: actions/upload-artifact@v4
         with:
@@ -33,19 +134,51 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      
       - name: Download updated publications.json
         uses: actions/download-artifact@v4
         with:
           name: updated-data
           path: tmp
+          
       - name: Overwrite publications.json in repo
         run: |
+          echo "📁 Setting up data directory..."
           mkdir -p data
+          
+          echo "📋 Copying updated publications.json..."
           cp tmp/publications.json data/publications.json
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+          
+          echo "🔍 Verifying copied file..."
+          if [ -f data/publications.json ]; then
+            FILE_SIZE=$(wc -c < data/publications.json)
+            echo "✅ File copied successfully ($FILE_SIZE bytes)"
+            
+            # 내용 미리보기
+            echo "📖 Publications preview:"
+            head -n 10 data/publications.json | sed 's/^/   /'
+          else
+            echo "❌ Failed to copy publications.json"
+            exit 1
+          fi
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .
-      - uses: actions/deploy-pages@v4
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
+      - name: Deployment summary
+        run: |
+          echo "🚀 Deployment completed!"
+          echo "🔗 Site URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "📅 Deployed at: $(date)"
