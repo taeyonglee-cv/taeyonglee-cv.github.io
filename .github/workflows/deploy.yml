@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *'  # 3일마다 새벽 2시
 
 permissions:
   contents: read
@@ -25,11 +25,11 @@ jobs:
       - name: Install dependencies
         run: npm install
         
-      - name: Run scholar crawler with retry logic
+      - name: Run scholar crawler with proxy support
         run: |
-          echo "Starting Google Scholar citation update..."
+          echo "Starting Google Scholar citation update with proxy support..."
           
-          # 기존 데이터가 있는지 확인하고 백업
+          # 기존 데이터 백업
           if [ -f data/publications.json ]; then
             echo "📋 Found existing publications.json, creating backup"
             cp data/publications.json data/publications.json.backup
@@ -39,41 +39,52 @@ jobs:
             echo "[]" > data/publications.json
           fi
           
-          # 3번 시도
+          # 프록시 크롤러가 있으면 우선 사용
           SUCCESS=false
-          for i in {1..3}; do
-            echo ""
-            echo "🔄 Attempt $i/3 to fetch Google Scholar data..."
-            
-            if node scripts/scholar-citation-crawler.js; then
-              echo "✅ Successfully fetched and updated citation data"
-              SUCCESS=true
-              break
-            else
-              echo "❌ Attempt $i failed"
-              
-              # 마지막 시도가 아니면 대기
-              if [ $i -lt 3 ]; then
-                WAIT_TIME=$((30 + i * 15))  # 30초, 45초, 마지막엔 대기 안함
-                echo "⏳ Waiting ${WAIT_TIME} seconds before next attempt..."
-                sleep $WAIT_TIME
-              fi
-            fi
-          done
           
-          # 모든 시도가 실패한 경우
+          if [ -f scripts/proxy-scholar-crawler.js ]; then
+            echo "🌐 Method 1: Using proxy crawler..."
+            if node scripts/proxy-scholar-crawler.js; then
+              echo "✅ Proxy crawler succeeded"
+              SUCCESS=true
+            else
+              echo "❌ Proxy crawler failed"
+            fi
+          fi
+          
+          # 프록시 방법이 실패하면 기존 방법으로 재시도
+          if [ "$SUCCESS" = false ]; then
+            echo "🔄 Method 2: Fallback to direct crawler with retry..."
+            
+            for i in {1..3}; do
+              echo "🔄 Direct attempt $i/3..."
+              
+              if node scripts/scholar-citation-crawler.js; then
+                echo "✅ Direct crawler succeeded on attempt $i"
+                SUCCESS=true
+                break
+              else
+                echo "❌ Direct attempt $i failed"
+                if [ $i -lt 3 ]; then
+                  WAIT_TIME=$((45 + i * 30))  # 45초, 75초
+                  echo "⏳ Waiting ${WAIT_TIME} seconds..."
+                  sleep $WAIT_TIME
+                fi
+              fi
+            done
+          fi
+          
+          # 모든 방법이 실패한 경우 기존 데이터 유지
           if [ "$SUCCESS" = false ]; then
             echo ""
-            echo "⚠️  All attempts failed, but continuing with existing data"
+            echo "⚠️ All methods failed, but continuing with existing data"
             
-            # 백업 파일이 있으면 복원
             if [ -f data/publications.json.backup ]; then
               echo "📋 Restoring from backup"
               cp data/publications.json.backup data/publications.json
             fi
             
-            # 파일이 아예 없으면 빈 배열 생성
-            if [ ! -f data/publications.json ]; then
+            if [ ! -f data/publications.json ] || [ ! -s data/publications.json ]; then
               echo "📝 Creating empty publications file"
               echo "[]" > data/publications.json
             fi
@@ -82,18 +93,21 @@ jobs:
           # 백업 파일 정리
           rm -f data/publications.json.backup
           
-          # 최종 결과 출력
+          # 최종 상태 확인
           echo ""
           echo "📊 Final publications.json status:"
           if [ -f data/publications.json ]; then
-            echo "✅ File exists ($(wc -c < data/publications.json) bytes)"
-            echo "📖 Content preview:"
-            head -n 5 data/publications.json
+            FILE_SIZE=$(wc -c < data/publications.json)
+            echo "✅ File exists ($FILE_SIZE bytes)"
+            if [ $FILE_SIZE -gt 2 ]; then
+              echo "📖 Content preview:"
+              head -n 5 data/publications.json
+            fi
           else
             echo "❌ File does not exist"
             exit 1
           fi
-        continue-on-error: false  # 파일이 없으면 실패
+        continue-on-error: false
         
       - name: Verify publications data
         run: |
