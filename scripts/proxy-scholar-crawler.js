@@ -29,44 +29,71 @@ class ProxyScholarCrawler {
         ];
     }
 
-    // 무료 프록시 목록 가져오기
+    // 여러 소스에서 무료 프록시 가져오기
     async getFreeProxies() {
-        return new Promise((resolve) => {
-            const options = {
-                hostname: 'api.proxyscrape.com',
-                path: '/v2/?request=get&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all',
-                method: 'GET'
-            };
-
-            const req = https.request(options, (res) => {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => {
-                    const proxies = data.split('\n')
-                        .filter(line => line.trim())
-                        .map(line => {
-                            const [ip, port] = line.trim().split(':');
-                            return { host: ip, port: parseInt(port) };
-                        })
-                        .filter(proxy => proxy.host && proxy.port);
-                    
-                    console.log(`📡 Found ${proxies.length} free proxies`);
-                    resolve(proxies.slice(0, 10)); // 상위 10개만 사용
+        const proxySources = [
+            'https://api.proxyscrape.com/v2/?request=get&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all&format=textplain',
+            'https://www.proxy-list.download/api/v1/get?type=http',
+            'https://api.openproxylist.xyz/http.txt'
+        ];
+    
+        const allProxies = [];
+    
+        for (const sourceUrl of proxySources) {
+            try {
+                const url = new URL(sourceUrl);
+                const options = {
+                    hostname: url.hostname,
+                    path: url.pathname + url.search,
+                    method: 'GET',
+                    timeout: 10000
+                };
+    
+                const proxies = await new Promise((resolve) => {
+                    const protocol = url.protocol === 'https:' ? https : http;
+                    const req = protocol.request(options, (res) => {
+                        let data = '';
+                        res.on('data', chunk => data += chunk);
+                        res.on('end', () => {
+                            const proxies = data.split('\n')
+                                .filter(line => line.trim())
+                                .map(line => {
+                                    const [ip, port] = line.trim().split(':');
+                                    return { host: ip, port: parseInt(port) };
+                                })
+                                .filter(proxy => proxy.host && proxy.port && !isNaN(proxy.port));
+                            
+                            resolve(proxies);
+                        });
+                    });
+    
+                    req.on('error', () => resolve([]));
+                    req.setTimeout(10000, () => {
+                        req.destroy();
+                        resolve([]);
+                    });
+                    req.end();
                 });
-            });
-
-            req.on('error', () => {
-                console.log('⚠️ Could not fetch proxy list, using direct connection');
-                resolve([]);
-            });
-
-            req.setTimeout(10000, () => {
-                req.destroy();
-                resolve([]);
-            });
-
-            req.end();
-        });
+    
+                allProxies.push(...proxies.slice(0, 5));
+            } catch (error) {
+                continue;
+            }
+        }
+    
+        // 백업 프록시 추가
+        if (allProxies.length === 0) {
+            allProxies.push(
+                { host: '8.208.84.236', port: 3128 },
+                { host: '20.111.54.16', port: 8123 },
+                { host: '103.117.192.14', port: 80 },
+                { host: '167.172.173.210', port: 37849 },
+                { host: '185.82.96.51', port: 9091 }
+            );
+        }
+    
+        console.log(`📡 Found ${allProxies.length} free proxies`);
+        return allProxies.slice(0, 15);
     }
 
     // 프록시를 통한 요청
@@ -82,12 +109,16 @@ class ProxyScholarCrawler {
                 method: 'GET',
                 headers: {
                     'User-Agent': this.userAgents[Math.floor(Math.random() * this.userAgents.length)],
-                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                    'Accept-Language': 'en-US,en;q=0.5',
-                    'Accept-Encoding': 'identity',
+                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+                    'Accept-Language': 'en-US,en;q=0.9,ko;q=0.8',
+                    'Accept-Encoding': 'gzip, deflate, br',
                     'DNT': '1',
                     'Connection': 'keep-alive',
                     'Upgrade-Insecure-Requests': '1',
+                    'Sec-Fetch-Dest': 'document',
+                    'Sec-Fetch-Mode': 'navigate',
+                    'Sec-Fetch-Site': 'none',
+                    'Referer': 'https://scholar.google.com/',
                     'Host': urlObj.hostname
                 }
             };
@@ -116,7 +147,7 @@ class ProxyScholarCrawler {
                 resolve({ success: false, error: error.message });
             });
 
-            req.setTimeout(15000, () => {
+            req.setTimeout(25000, () => {
                 req.destroy();
                 console.log(`⏰ Timeout via ${proxy ? 'proxy' : 'direct'}`);
                 resolve({ success: false, error: 'timeout' });
@@ -134,15 +165,16 @@ class ProxyScholarCrawler {
         
         // 방법 1: 직접 연결
         console.log('📡 Method 1: Direct connection');
-        await this.randomDelay(2000, 4000);
+        await this.randomDelay(3000, 6000);
         let result = await this.fetchWithProxy(url);
         if (result.success) return result.data;
 
         // 방법 2: 무료 프록시 사용
         console.log('📡 Method 2: Free proxies');
         const proxies = await this.getFreeProxies();
+        await this.randomDelay(3000, 6000);
         
-        for (const proxy of proxies.slice(0, 5)) { // 상위 5개 프록시만 시도
+        for (const proxy of proxies.slice(0, 10)) { // 상위 5개 프록시만 시도
             await this.randomDelay(3000, 5000);
             result = await this.fetchWithProxy(url, proxy);
             if (result.success) return result.data;
