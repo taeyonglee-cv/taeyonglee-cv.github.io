@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * *'  # 3일마다 새벽 2시
+    - cron: '0 0 * * *'
 
 permissions:
   contents: read
@@ -18,16 +18,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.11'
           
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Run scholar crawler with proxy support
+      - name: Install Python dependencies
         run: |
-          echo "Starting Google Scholar citation update with proxy support..."
+          echo "📦 Installing Python packages..."
+          pip install scholarly
+          
+      - name: Run Python scholar crawler
+        run: |
+          echo "Starting Google Scholar citation update with Python..."
           
           # 기존 데이터 백업
           if [ -f data/publications.json ]; then
@@ -39,45 +41,27 @@ jobs:
             echo "[]" > data/publications.json
           fi
           
-          # 프록시 크롤러가 있으면 우선 사용
+          # Python 크롤러 실행
           SUCCESS=false
           
-          if [ -f scripts/proxy-scholar-crawler.js ]; then
-            echo "🌐 Method 1: Using proxy crawler..."
-            if node scripts/proxy-scholar-crawler.js; then
-              echo "✅ Proxy crawler succeeded"
+          if [ -f scripts/gs_crawler.py ]; then
+            echo "🐍 Running Python Google Scholar crawler..."
+            
+            # Python 스크립트 실행 (타임아웃 5분)
+            if timeout 300 python scripts/gs_crawler.py; then
+              echo "✅ Python crawler succeeded"
               SUCCESS=true
             else
-              echo "❌ Proxy crawler failed"
+              echo "❌ Python crawler failed or timed out"
             fi
+          else
+            echo "❌ gs_crawler.py not found!"
           fi
           
-          # 프록시 방법이 실패하면 기존 방법으로 재시도
-          if [ "$SUCCESS" = false ]; then
-            echo "🔄 Method 2: Fallback to direct crawler with retry..."
-            
-            for i in {1..3}; do
-              echo "🔄 Direct attempt $i/3..."
-              
-              if node scripts/scholar-citation-crawler.js; then
-                echo "✅ Direct crawler succeeded on attempt $i"
-                SUCCESS=true
-                break
-              else
-                echo "❌ Direct attempt $i failed"
-                if [ $i -lt 3 ]; then
-                  WAIT_TIME=$((45 + i * 30))  # 45초, 75초
-                  echo "⏳ Waiting ${WAIT_TIME} seconds..."
-                  sleep $WAIT_TIME
-                fi
-              fi
-            done
-          fi
-          
-          # 모든 방법이 실패한 경우 기존 데이터 유지
+          # 실패한 경우 기존 데이터 복원
           if [ "$SUCCESS" = false ]; then
             echo ""
-            echo "⚠️ All methods failed, but continuing with existing data"
+            echo "⚠️ Python crawler failed, but continuing with existing data"
             
             if [ -f data/publications.json.backup ]; then
               echo "📋 Restoring from backup"
@@ -119,7 +103,7 @@ jobs:
           fi
           
           # JSON 유효성 검사
-          if ! python3 -m json.tool data/publications.json > /dev/null 2>&1; then
+          if ! python3 -c "import json; json.load(open('data/publications.json'))" 2>/dev/null; then
             echo "❌ Invalid JSON format!"
             echo "📄 File content:"
             cat data/publications.json
