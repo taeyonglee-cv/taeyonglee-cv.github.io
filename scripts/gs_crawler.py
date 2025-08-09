@@ -11,7 +11,7 @@ PUBLICATIONS_PATH = Path("./data/publications.json")
 
 with open(CONFIG_PATH, encoding="utf-8") as f:
     config = json.load(f)
-AUTHOR_ID = config["personal"]["google_scholar"]
+AUTHOR_ID = config["author"]["scholarId"]
 
 def normalize_title(t: str) -> str:
     """
