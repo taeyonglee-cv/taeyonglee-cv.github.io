@@ -3,8 +3,8 @@ from datetime import datetime
 import json, re
 from pathlib import Path
 
-CONFIG_PATH = Path("../config.json")
-PUBLICATIONS_PATH = Path("../data/publications.json")
+CONFIG_PATH = Path("config.json")
+PUBLICATIONS_PATH = Path("./data/publications.json")
 
 with open(CONFIG_PATH, encoding="utf-8") as f:
     config = json.load(f)
@@ -130,4 +130,5 @@ def update_publications_file():
     print(f"Updated: {updated} items, Skipped: {skipped} items, Fuzzy matched: {fuzzy_used} items, Total Scholar items: {len(citation_map)}")
 
 if __name__ == "__main__":
+
     update_publications_file()
