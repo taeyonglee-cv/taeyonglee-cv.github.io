@@ -1,14 +1,17 @@
-from scholarly import scholarly, ProxyGenerator
+from dotenv import load_dotenv
+from serpapi import GoogleSearch
 from datetime import datetime
+import difflib
 import json, re
 from pathlib import Path
+import os
 
 CONFIG_PATH = Path("config.json")
 PUBLICATIONS_PATH = Path("./data/publications.json")
 
 with open(CONFIG_PATH, encoding="utf-8") as f:
     config = json.load(f)
-AUTHOR_ID = config["author"]["scholarId"]
+AUTHOR_ID = config["personal"]["google_scholar"]
 
 def normalize_title(t: str) -> str:
     """
@@ -49,41 +52,42 @@ def fetch_citation_map(author_id: str) -> dict:
     Returns:
         dict: A dictionary mapping normalized publication titles to their citation counts.
     """
-    # Search for the author by ID
-    for attempt in range(3):
-        try:
-            if attempt == 0:
-                print("Trying without proxy...")
-                author = scholarly.search_author_id(author_id)
-            else:
-                print(f"Retrying with proxy: {proxy}")
-                pg = ProxyGenerator()
-                success = pg.FreeProxies()
-                scholarly.use_proxy(pg)
-                author = scholarly.search_author_id(author_id)
-                
-        except Exception as e:
-            print(f"Attempt {attempt+1} failed: {e}")
-            time.sleep(10)  # 서버 부담 줄이기
-
-    author = scholarly.search_author_id(author_id)
+    load_dotenv()
+    api_key = os.getenv("SERP_API_KEY")
     
-    # Fill the author's details, focusing on publications
-    scholarly.fill(author, sections=["publications"])
+    if not api_key:
+        raise RuntimeError("No SERP_API_KEY found (Check .env)")
+
+    params = {
+    "api_key": api_key,
+    "engine": "google_scholar_author",
+    "hl": "en",
+    "author_id": author_id,
+    "num": "100"
+    }
+    
+    # Search for the author by ID
+    search = GoogleSearch(params)
+    results = search.get_dict()
+
+    if "error" in results:
+        raise RuntimeError(f"SerpAPI error: {results['error']}")
     
     citation_map = {}
+    next_token = None
     
     # Iterate through all publications of the author
-    for pub in author.get("publications", []):
+    for article in results.get("articles", []):
         # Retrieve the title of the publication
-        title: str = pub.get("bib", {}).get("title")
+        title: str = article.get("title")
         
         # Skip if title is not available
         if not title:
             continue
         
         # Retrieve the number of citations
-        citations: int = pub.get("num_citations")
+        cited_by = article.get("cited_by") or {}
+        citations = cited_by.get("value", 0) or 0
         
         # Normalize the title and add to the citation map
         citation_map[normalize_title(title)] = int(citations)
@@ -99,6 +103,9 @@ def update_publications_file():
     using their Google Scholar ID. It reads the publications file, updates the
     citation count for each publication, and writes the updated file.
     """
+    if not PUBLICATIONS_PATH.exists():
+        raise FileNotFoundError(f"{PUBLICATIONS_PATH} not found")
+
     data = json.loads(PUBLICATIONS_PATH.read_text(encoding="utf-8"))
     if not isinstance(data, list):
         raise ValueError("publications.json format is not a list")
@@ -146,8 +153,4 @@ def update_publications_file():
     print(f"Updated: {updated} items, Skipped: {skipped} items, Fuzzy matched: {fuzzy_used} items, Total Scholar items: {len(citation_map)}")
 
 if __name__ == "__main__":
-
     update_publications_file()
-
-
-
