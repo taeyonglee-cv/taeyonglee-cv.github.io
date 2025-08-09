@@ -1,4 +1,4 @@
-from scholarly import scholarly
+from scholarly import scholarly, ProxyGenerator
 from datetime import datetime
 import json, re
 from pathlib import Path
@@ -50,6 +50,22 @@ def fetch_citation_map(author_id: str) -> dict:
         dict: A dictionary mapping normalized publication titles to their citation counts.
     """
     # Search for the author by ID
+    for attempt in range(3):
+        try:
+            if attempt == 0:
+                print("Trying without proxy...")
+                author = scholarly.search_author_id(author_id)
+            else:
+                print(f"Retrying with proxy: {proxy}")
+                pg = ProxyGenerator()
+                success = pg.FreeProxies()
+                scholarly.use_proxy(pg)
+                author = scholarly.search_author_id(author_id)
+                
+        except Exception as e:
+            print(f"Attempt {attempt+1} failed: {e}")
+            time.sleep(10)  # 서버 부담 줄이기
+
     author = scholarly.search_author_id(author_id)
     
     # Fill the author's details, focusing on publications
@@ -132,5 +148,6 @@ def update_publications_file():
 if __name__ == "__main__":
 
     update_publications_file()
+
 
 
