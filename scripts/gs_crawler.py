@@ -8,7 +8,7 @@ PUBLICATIONS_PATH = Path("./data/publications.json")
 
 with open(CONFIG_PATH, encoding="utf-8") as f:
     config = json.load(f)
-AUTHOR_ID = config["author"]["scholarID"]
+AUTHOR_ID = config["author"]["scholarId"]
 
 def normalize_title(t: str) -> str:
     """
@@ -132,4 +132,5 @@ def update_publications_file():
 if __name__ == "__main__":
 
     update_publications_file()
+
 
