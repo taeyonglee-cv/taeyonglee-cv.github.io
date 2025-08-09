@@ -47,8 +47,8 @@ jobs:
           if [ -f scripts/gs_crawler.py ]; then
             echo "🐍 Running Python Google Scholar crawler..."
             
-            # Python 스크립트 실행 (타임아웃 5분)
-            if timeout 300 python scripts/gs_crawler.py; then
+            # Python 스크립트 실행
+            if python scripts/gs_crawler.py; then
               echo "✅ Python crawler succeeded"
               SUCCESS=true
             else
