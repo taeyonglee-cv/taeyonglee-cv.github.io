@@ -20,7 +20,7 @@
       "fr": "18 Octobre 2024"
     },
     "citations_updated_at": "2025-07-17T00:30:15.156Z",
-    "citations_last_checked": "2025-11-02T00:44:10"
+    "citations_last_checked": "2025-11-03T00:43:40"
   },
   {
     "date": "2020-02-12",
@@ -43,14 +43,14 @@
       "fr": "12 Février 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2025-11-02T00:44:10"
+    "citations_last_checked": "2025-11-03T00:43:40"
   },
   {
     "date": "2021-04-08",
     "title": "Estimating the basic reproductive number of varicella in South Korea incorporating social contact patterns and seroprevalence",
     "journal": "Human Vaccines & Immunotherapeutics",
     "link": "https://doi.org/10.1080/21645515.2021.1898917",
-    "citations": 7,
+    "citations": 8,
     "summary": {
       "en": "Varicella causes a significant disease burden in South Korea, but the optimal vaccination strategy remains unclear. We estimated the basic reproductive number (R0) of 5.67 (95% CI: 5.33, 6.33) and the herd immunity threshold of 82.4%, integrating social contact patterns and seroprevalence data. Surprisingly, even 100% vaccine coverage may be insufficient, as the primary vaccine failure proportion must be less than 17.6% to achieve herd immunity. These findings challenge the assumption that a one-dose varicella vaccination strategy is adequate, indicating that a two-dose regimen may be necessary to effectively interrupt transmission and maintain herd immunity in South Korea.",
       "ko": "대한민국에서 수두는 상당한 질병 부담을 야기하지만, 최적의 예방접종 전략은 아직 불분명하다. 우리는 사회적 접촉 패턴과 혈청 유병률 데이터를 사용하여 기본재생산지수 5.67 (95% CI: 5.33, 6.33)과 집단면역 임계치 82.4%를 추정했다. 놀랍게도 100% 백신 접종률이라도 충분하지 않을 수 있는데, 이는 집단면역을 달성하기 위해서는 1차 백신 실패 비율이 17.6% 미만이어야 하기 때문이다. 이러한 발견은 1회 접종 수두 백신 전략이 적절하다는 가정에 도전한다. 이는 대한민국에서 전파를 효과적으로 차단하고 집단면역을 유지하기 위해서는 2회 접종 체제가 필요할 수 있음을 시사한다.",
@@ -66,7 +66,7 @@
       "fr": "8 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2025-11-02T00:44:10"
+    "citations_last_checked": "2025-11-03T00:43:40"
   },
   {
     "date": "2021-03-29",
@@ -89,7 +89,7 @@
       "fr": "29 Mars 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2025-11-02T00:44:10"
+    "citations_last_checked": "2025-11-03T00:43:40"
   },
   {
     "date": "2020-10-26",
@@ -112,7 +112,7 @@
       "fr": "26 Octobre 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2025-11-02T00:44:10"
+    "citations_last_checked": "2025-11-03T00:43:40"
   },
   {
     "date": "2024-02-16",
@@ -135,7 +135,7 @@
       "fr": "16 Février 2024"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2025-11-02T00:44:10"
+    "citations_last_checked": "2025-11-03T00:43:40"
   },
   {
     "date": "2021-04-01",
@@ -158,6 +158,6 @@
       "fr": "1 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2025-11-02T00:44:10"
+    "citations_last_checked": "2025-11-03T00:43:40"
   }
 ]
