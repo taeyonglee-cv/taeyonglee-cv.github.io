@@ -46,7 +46,7 @@
       }
     },
     {
-      "title": "Visiting Researcher",
+      "title": "Research Intern",
       "location": {
         "en": "BIMAG, IBS (Institute of Basic Science)",
         "ko": "BIMAG, 기초과학연구원 (IBS)",
@@ -127,11 +127,11 @@
   "ongoingProject": [
     {
       "name": "Optimizing oral contraceptive timing: Morning intake reduces doses and enhances efficacy",
-      "progress": 90
+      "progress": 99
     },
     {
       "name": "Project RESERVOIR",
-      "progress": 10
+      "progress": 15
     }
   ],
   "achievements": [
