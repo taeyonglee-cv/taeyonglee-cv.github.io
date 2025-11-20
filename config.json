@@ -32,13 +32,16 @@
       "period": "2025-Present",
       "description": {
         "en": [
-          "Project RESERVOIR - AMR nosocomial transmission dynamics"
+          "Project RESERVOIR - AMR nosocomial transmission dynamics",
+          "PI: Prof. Lulla Opatowski"
         ],
         "ko": [
-          "프로젝트 RESERVOIR - AMR 병원 내 전파 역학 연구"
+          "프로젝트 RESERVOIR - AMR 병원 내 전파 역학 연구",
+          "PI: Prof. Lulla Opatowski"
         ],
         "fr": [
-          "Projet RESERVOIR - dynamiques de transmission nosocomiale AMR"
+          "Projet RESERVOIR - dynamiques de transmission nosocomiale AMR",
+          "PI: Prof. Lulla Opatowski"
         ]
       }
     },
@@ -101,19 +104,22 @@
           "Thesis: 'Comparisons and Optimizations of Controls Using Transmission Models' (Best Thesis Award)",
           "Developed mathematical (ODE, PDE, stochastic) and agent-based models for various systems including VZV, COVID-19, rotavirus, contact networks, cell dynamics, and oncolytic viruses",
           "Analyzed 2020–2021 Korean contact survey data in conjunction with infectious disease dynamics",
-          "Applied optimal control algorithms to derive practical and continuous treatment strategies"
+          "Applied optimal control algorithms to derive practical and continuous treatment strategies",
+          "Advisor: Prof. Jeehyun Lee"
         ],
         "ko": [
           "논문 제목: 'Comparisons and Optimizations of Controls Using Transmission Models' (최우수 논문상 수상)",
           "VZV, COVID-19, 로타바이러스, 접촉 네트워크, 세포 구조, 종양용해바이러스 등을 설명하기 위한 수학적 모델(ODE, PDE, 확률론적 모델) 및 에이전트 기반 모델 개발",
           "2020–2021년 한국 접촉 조사 데이터를 질병 동역학과 함께 분석",
-          "현실적이고 연속적인 최적 치료 전략을 도출하기 위한 최적 제어 알고리즘 적용"
+          "현실적이고 연속적인 최적 치료 전략을 도출하기 위한 최적 제어 알고리즘 적용",
+          "지도교수: 이지현 교수님"
         ],
         "fr": [
           "Thèse : « Comparisons and Optimizations of Controls Using Transmission Models » (Prix de la meilleure thèse)",
           "Développement de modèles mathématiques (EDO, EDP, stochastiques) et de modèles à base d'agents pour divers systèmes : VZV, COVID-19, rotavirus, réseaux de contact, dynamiques cellulaires, virus oncolytiques",
           "Analyse des données d'enquêtes coréennes sur les contacts sociaux (2020–2021) en lien avec la dynamique des maladies infectieuses",
-          "Application d'algorithmes de contrôle optimal pour élaborer des stratégies de traitement pratiques et continues"
+          "Application d'algorithmes de contrôle optimal pour élaborer des stratégies de traitement pratiques et continues",
+          "Directeur: Prof. Jeehyun Lee"
         ]
       }
     }
