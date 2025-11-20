@@ -45,7 +45,7 @@
                 <h3>Menu</h3>
                 <button class="mobile-menu-close" aria-label="Close mobile menu">&times;</button>
             </div>
-            
+
             <div class="mobile-menu-section">
                 <h4>Navigation</h4>
                 <a href="#experiences" data-nav="experience" class="mobile-menu-link">Experience</a>
@@ -54,7 +54,7 @@
                 <a href="#achievements" data-nav="achievements" class="mobile-menu-link">Achievements</a>
                 <a href="#education" data-nav="education" class="mobile-menu-link">Education</a>
             </div>
-            
+
             <div class="mobile-menu-section">
                 <h4>Language</h4>
                 <div class="mobile-language-selector">
@@ -100,8 +100,7 @@
                                 class="fas fa-graduation-cap"></i></a>
                         <a href="https://orcid.org/0000-0002-1940-0210" target="_blank" rel="noopener noreferrer"
                             aria-label="ORCID"><i class="fab fa-orcid"></i></a>
-                        <a href="https://bit.ly/TaeyongCV"
-                            target="_blank" rel="noopener noreferrer" class="cv-link">
+                        <a href="https://bit.ly/TaeyongCV" target="_blank" rel="noopener noreferrer" class="cv-link">
                             <i class="fas fa-file-pdf"></i> Download CV
                         </a>
                     </div>
@@ -158,7 +157,10 @@
 
     <footer>
         <div class="container">
-            <p>Visitors: <span id="visitor-count">0</span></p>
+            <p>
+                <img src="https://visitor-badge.laobi.icu/badge?page_id=taeyonglee-cv.github.io&left_text=Visitors&left_color=%23000000&right_color=%23000000"
+                    alt="" aria-label="Visitor count" style="vertical-align: middle; height: 27px;" />
+            </p>
             <p>&copy; 2025 Taeyong Lee. All rights reserved.</p>
         </div>
     </footer>
@@ -402,46 +404,17 @@
                 sortedPublications.sort((a, b) => new Date(b.date) - new Date(a.date));
                 renderPublications(sortedPublications, currentLanguage);
 
-                // Update real visitor count
-                const visitorCount = document.getElementById('visitor-count');
-                if (visitorCount) {
-                    // Get current visitor count from localStorage
-                    let currentCount = localStorage.getItem('homepage-visitor-count');
-
-                    if (!currentCount) {
-                        // Initialize with a reasonable starting number if first time
-                        currentCount = 0; // You can adjust this starting number
-                    } else {
-                        currentCount = parseInt(currentCount);
-                    }
-
-                    // Check if this is a new visit (not within the same session)
-                    const lastVisit = localStorage.getItem('homepage-last-visit');
-                    const now = Date.now();
-                    const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
-
-                    if (!lastVisit || (now - parseInt(lastVisit)) > oneHour) {
-                        // Increment count for new visit (only if more than 1 hour has passed)
-                        currentCount++;
-                        localStorage.setItem('homepage-visitor-count', currentCount.toString());
-                        localStorage.setItem('homepage-last-visit', now.toString());
-                    }
-
-                    // Display the count
-                    visitorCount.textContent = currentCount.toLocaleString();
-                }
-
                 console.log('✅ Page fully loaded');
-                
+
                 // Initialize mobile menu
                 initializeMobileMenu();
-                
+
                 // DEBUG: Test mobile layout detection
                 function testMobileLayout() {
                     const isMobile = window.matchMedia('(max-width: 768px)').matches;
                     console.log('📱 Mobile layout active:', isMobile);
                     console.log('🖥️ Window width:', window.innerWidth);
-                    
+
                     if (isMobile) {
                         console.log('✅ Mobile CSS should be active - look for:');
                         console.log('  - Red border at top of page');
@@ -450,17 +423,17 @@
                         console.log('  - Light green hero section');
                     }
                 }
-                
+
                 testMobileLayout();
                 window.addEventListener('resize', testMobileLayout);
-                
+
                 function initializeMobileMenu() {
                     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
                     const mobileMenuOverlay = document.getElementById('mobile-menu');
                     const mobileMenuClose = document.querySelector('.mobile-menu-close');
                     const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
                     const mobileLangBtns = document.querySelectorAll('.mobile-lang-btn');
-                    
+
                     // Toggle mobile menu
                     if (mobileMenuToggle) {
                         mobileMenuToggle.addEventListener('click', () => {
@@ -468,12 +441,12 @@
                             document.body.style.overflow = 'hidden';
                         });
                     }
-                    
+
                     // Close mobile menu
                     if (mobileMenuClose) {
                         mobileMenuClose.addEventListener('click', closeMobileMenu);
                     }
-                    
+
                     // Close menu when clicking overlay
                     if (mobileMenuOverlay) {
                         mobileMenuOverlay.addEventListener('click', (e) => {
@@ -482,14 +455,14 @@
                             }
                         });
                     }
-                    
+
                     // Close menu when clicking navigation links
                     mobileMenuLinks.forEach(link => {
                         link.addEventListener('click', () => {
                             closeMobileMenu();
                         });
                     });
-                    
+
                     // Mobile language selector
                     mobileLangBtns.forEach((btn, index) => {
                         console.log(`🔧 Setting up mobile lang button ${index}:`, btn);
@@ -497,24 +470,24 @@
                             e.preventDefault();
                             const lang = btn.getAttribute('data-lang');
                             console.log(`🌐 Mobile language clicked: ${lang}`);
-                            
+
                             // Update mobile language buttons
                             mobileLangBtns.forEach(b => b.classList.remove('active'));
                             btn.classList.add('active');
-                            
+
                             // Update desktop language buttons
                             const desktopLangBtns = document.querySelectorAll('.language-selector button');
                             desktopLangBtns.forEach(b => b.classList.remove('active'));
                             const desktopBtn = document.querySelector(`.language-selector button[data-lang="${lang}"]`);
                             if (desktopBtn) desktopBtn.classList.add('active');
-                            
+
                             // Change language using the existing function
                             console.log('🔄 Calling loadContentByLanguage...');
                             loadContentByLanguage(lang);
                             closeMobileMenu();
                         });
                     });
-                    
+
                     function closeMobileMenu() {
                         mobileMenuOverlay.style.display = 'none';
                         document.body.style.overflow = 'auto';
