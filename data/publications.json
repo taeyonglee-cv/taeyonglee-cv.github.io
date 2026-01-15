@@ -20,7 +20,7 @@
       "fr": "18 Octobre 2024"
     },
     "citations_updated_at": "2025-07-17T00:30:15.156Z",
-    "citations_last_checked": "2026-01-14T00:47:59"
+    "citations_last_checked": "2026-01-15T00:43:32"
   },
   {
     "date": "2020-02-12",
@@ -43,7 +43,7 @@
       "fr": "12 Février 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-01-14T00:47:59"
+    "citations_last_checked": "2026-01-15T00:43:32"
   },
   {
     "date": "2021-04-08",
@@ -66,14 +66,14 @@
       "fr": "8 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-01-14T00:47:59"
+    "citations_last_checked": "2026-01-15T00:43:32"
   },
   {
     "date": "2021-03-29",
     "title": "The effect of control measures on COVID-19 transmission in South Korea",
     "journal": "PLOS ONE",
     "link": "https://doi.org/10.1371/journal.pone.0249262",
-    "citations": 38,
+    "citations": 37,
     "summary": {
       "en": "COVID-19 spread rapidly in early 2020, and while Korea's interventions were initially successful, maintaining strict measures like social distancing and school closures imposes high social costs. We developed a calibrated age-structured SEIR model with added compartments for quarantine and isolation, fitted to KDCA-reported age-specific case data, comparing multiple intervention scenarios with differing assumptions about infectivity. Without social distancing, a second wave is predicted, while early isolation (2 vs. 3 days) reduced cumulative cases by up to 60% and deaths by up to 83%, with quarantine becoming as critical as isolation if exposed individuals are also infectious. The study demonstrates that timing and intensity of interventions critically shape outbreak trajectories, highlighting that combining early isolation and quarantine was essential for Korea's initial COVID-19 control.",
       "ko": "2020년 초반 COVID-19가 빠르게 확산되었지만, 한국의 대응 조치는 초기에 성공적이었다. 하지만 사회적 거리두기와 학교 폐쇄와 같은 엄격한 조치를 유지하는 것은 높은 사회적 비용을 초래한다. 우리는 격리와 격리를 위한 추가 구획이 포함된 보정된 연령 구조 SEIR 모델을 개발했고, 이를 질병관리청에서 보고한 연령별 사례 데이터에 맞춰 조정했다. 다양한 전염성 가정을 바탕으로 여러 개입 시나리오를 비교했다. 사회적 거리두기 없이는 2차 유행이 예측되었지만, 조기 격리(2일 vs. 3일)는 누적 사례를 최대 60%, 사망자를 최대 83%까지 줄였다. 노출된 개인들도 전염성이 있다면 격리가 격리만큼 중요해진다. 본 연구는 개입의 시기와 강도가 유행 양상을 결정적으로 형성한다는 것을 보여주며, 조기 격리와 격리를 결합하는 것이 한국의 초기 COVID-19 통제에 필수적이었음을 강조한다.",
@@ -89,7 +89,7 @@
       "fr": "29 Mars 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-01-14T00:47:59"
+    "citations_last_checked": "2026-01-15T00:43:32"
   },
   {
     "date": "2020-10-26",
@@ -112,7 +112,7 @@
       "fr": "26 Octobre 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-01-14T00:47:59"
+    "citations_last_checked": "2026-01-15T00:43:32"
   },
   {
     "date": "2024-02-16",
@@ -135,7 +135,7 @@
       "fr": "16 Février 2024"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-01-14T00:47:59"
+    "citations_last_checked": "2026-01-15T00:43:32"
   },
   {
     "date": "2021-04-01",
@@ -158,6 +158,6 @@
       "fr": "1 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-01-14T00:47:59"
+    "citations_last_checked": "2026-01-15T00:43:32"
   }
 ]
