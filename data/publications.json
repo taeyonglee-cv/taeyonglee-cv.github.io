@@ -20,14 +20,14 @@
       "fr": "18 Octobre 2024"
     },
     "citations_updated_at": "2025-07-17T00:30:15.156Z",
-    "citations_last_checked": "2026-01-18T00:51:14"
+    "citations_last_checked": "2026-01-19T00:50:38"
   },
   {
     "date": "2020-02-12",
     "title": "Application of control theory in a delayed-infection and immune-evading oncolytic virotherapy",
     "journal": "Mathematical Biosciences and Engineering",
     "link": "https://doi.org/10.3934/mbe.2020126",
-    "citations": 17,
+    "citations": 18,
     "summary": {
       "en": "Oncolytic virotherapy holds promise for cancer treatment, but viral clearance by the immune system and non-uniform diffusion reduce its efficacy. We formulated a PDE-based spatial model incorporating tumor–virus dynamics, immune-driven viral clearance, and multi-level viral coating, applying finite-horizon optimal control to determine the ideal initial distribution of coating levels. A bimodal injection—mixing thickly coated and thinly coated virus—consistently minimized tumor volume, with the optimal composition evolving over time as thicker coatings gain importance for long-term control. This study provides the first spatially-resolved control framework for virotherapy with immune evasion and delayed infection, offering actionable guidance for designing virus formulations.",
       "ko": "종양용해바이러스요법은 암 치료에 희망을 주지만, 면역 체계에 의한 바이러스 제거와 불균일한 확산은 그 효능을 떨어뜨린다. 우리는 종양-바이러스 역학, 면역 매개 바이러스 제거, 다단계 바이러스 코팅을 포함하는 PDE 기반 공간 모델을 구축하고, 유한 시계열 최적제어를 적용해 이상적인 초기 코팅 수준 분포를 찾았다. 두꺼운 코팅과 얇은 코팅 바이러스를 혼합한 이중 주입이 일관되게 종양 부피를 최소화했는데, 장기 관리를 위해 더 두꺼운 코팅이 중요해지면서 최적 조성이 시간에 따라 변화했다. 이 연구는 면역 회피와 지연된 감염을 가진 바이러스요법을 위한 첫 공간 제어 체계를 제공하며, 바이러스 제형 설계에 실용적인 지침을 제시한다.",
@@ -43,7 +43,7 @@
       "fr": "12 Février 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-01-18T00:51:14"
+    "citations_last_checked": "2026-01-19T00:50:38"
   },
   {
     "date": "2021-04-08",
@@ -66,7 +66,7 @@
       "fr": "8 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-01-18T00:51:14"
+    "citations_last_checked": "2026-01-19T00:50:38"
   },
   {
     "date": "2021-03-29",
@@ -89,7 +89,7 @@
       "fr": "29 Mars 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-01-18T00:51:14"
+    "citations_last_checked": "2026-01-19T00:50:38"
   },
   {
     "date": "2020-10-26",
@@ -112,7 +112,7 @@
       "fr": "26 Octobre 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-01-18T00:51:14"
+    "citations_last_checked": "2026-01-19T00:50:38"
   },
   {
     "date": "2024-02-16",
@@ -135,7 +135,7 @@
       "fr": "16 Février 2024"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-01-18T00:51:14"
+    "citations_last_checked": "2026-01-19T00:50:38"
   },
   {
     "date": "2021-04-01",
@@ -158,6 +158,6 @@
       "fr": "1 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-01-18T00:51:14"
+    "citations_last_checked": "2026-01-19T00:50:38"
   }
 ]
