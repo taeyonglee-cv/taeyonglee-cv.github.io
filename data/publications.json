@@ -20,7 +20,7 @@
       "fr": "18 Octobre 2024"
     },
     "citations_updated_at": "2025-07-17T00:30:15.156Z",
-    "citations_last_checked": "2026-03-19T01:01:24"
+    "citations_last_checked": "2026-03-20T00:58:29"
   },
   {
     "date": "2020-02-12",
@@ -43,7 +43,7 @@
       "fr": "12 Février 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-03-19T01:01:24"
+    "citations_last_checked": "2026-03-20T00:58:29"
   },
   {
     "date": "2021-04-08",
@@ -66,7 +66,7 @@
       "fr": "8 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-03-19T01:01:24"
+    "citations_last_checked": "2026-03-20T00:58:29"
   },
   {
     "date": "2021-03-29",
@@ -89,14 +89,14 @@
       "fr": "29 Mars 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-03-19T01:01:24"
+    "citations_last_checked": "2026-03-20T00:58:29"
   },
   {
     "date": "2020-10-26",
     "title": "A mathematical model of COVID-19 transmission in a tertiary hospital and assessment of the effects of different intervention strategies",
     "journal": "PLOS ONE",
     "link": "https://doi.org/10.1371/journal.pone.0241169",
-    "citations": 31,
+    "citations": 32,
     "summary": {
       "en": "COVID-19 spreads rapidly in closed settings like hospitals, threatening vulnerable patients and potentially paralyzing care. We developed a detailed SEIR compartment model tailored to a 2500-bed Korean tertiary hospital, simulating interventions such as front-door screening, quarantine, early testing, and PPE usage. Early testing was the most effective measure, reducing incident cases by 80.7% over 60 days, while quarantining patients cut cases by 65.7% and universal mask-wearing yielded 66.4% reduction. This is the first hospital-specific COVID-19 transmission model incorporating staff/visitor flow and spatial structure, offering strong evidence that early testing and patient isolation are far more effective than screening alone.",
       "ko": "COVID-19가 병원 등 밀폐된 환경에서 빠르게 확산되어 취약한 환자들을 위협하고 돌봄을 마비시킬 수 있다. 우리는 2500병상 규모의 한국 상급종합병원을 대상으로 맞춤형 SEIR 구획 모델을 개발했다. 이를 통해 입구 검역, 격리, 조기 검사, 개인보호장비 사용 등의 중재 방안을 시뮬레이션했다. 조기 검사가 가장 효과적인 조치로, 60일 동안 발생 사례를 80.7% 줄였다. 환자 격리는 65.7%, 전체 마스크 착용은 66.4% 감소 효과를 보였다. 이는 직원/방문객 동선과 공간 구조를 반영한 최초의 병원 특화 COVID-19 전파 모델로, 검역만으로는 부족하고 조기 검사와 환자 격리가 훨씬 더 효과적임을 보여준다.",
@@ -112,7 +112,7 @@
       "fr": "26 Octobre 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-03-19T01:01:24"
+    "citations_last_checked": "2026-03-20T00:58:29"
   },
   {
     "date": "2024-02-16",
@@ -135,7 +135,7 @@
       "fr": "16 Février 2024"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-03-19T01:01:24"
+    "citations_last_checked": "2026-03-20T00:58:29"
   },
   {
     "date": "2021-04-01",
@@ -158,6 +158,6 @@
       "fr": "1 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-03-19T01:01:24"
+    "citations_last_checked": "2026-03-20T00:58:29"
   }
 ]
