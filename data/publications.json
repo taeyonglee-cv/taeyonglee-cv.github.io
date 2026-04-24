@@ -20,7 +20,7 @@
       "fr": "18 Octobre 2024"
     },
     "citations_updated_at": "2025-07-17T00:30:15.156Z",
-    "citations_last_checked": "2026-04-24T01:16:34"
+    "citations_last_checked": "2026-04-23T01:16:57"
   },
   {
     "date": "2020-02-12",
@@ -43,7 +43,7 @@
       "fr": "12 Février 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-04-24T01:16:34"
+    "citations_last_checked": "2026-04-23T01:16:57"
   },
   {
     "date": "2021-04-08",
@@ -66,7 +66,7 @@
       "fr": "8 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-04-24T01:16:34"
+    "citations_last_checked": "2026-04-23T01:16:57"
   },
   {
     "date": "2021-03-29",
@@ -89,7 +89,7 @@
       "fr": "29 Mars 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-04-24T01:16:34"
+    "citations_last_checked": "2026-04-23T01:16:57"
   },
   {
     "date": "2020-10-26",
@@ -112,7 +112,7 @@
       "fr": "26 Octobre 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-04-24T01:16:34"
+    "citations_last_checked": "2026-04-23T01:16:57"
   },
   {
     "date": "2024-02-16",
@@ -135,7 +135,7 @@
       "fr": "16 Février 2024"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-04-24T01:16:34"
+    "citations_last_checked": "2026-04-23T01:16:57"
   },
   {
     "date": "2021-04-01",
@@ -158,6 +158,29 @@
       "fr": "1 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-04-24T01:16:34"
+    "citations_last_checked": "2026-04-23T01:16:57"
+  },
+  {
+    "date": "2026-03-13",
+    "title": "Optimizing oral contraceptive timing: Daytime intake reduces doses and enhances efficacy",
+    "journal": "PLOS Computational Biology",
+    "link": "https://doi.org/10.1371/journal.pcbi.1014040",
+    "citations": 0,
+    "summary": {
+      "en": "Current oral contraceptive regimens generally ignore circadian hormonal rhythms, despite their influence on hormone secretion and drug metabolism. We developed a mathematical model integrating circadian rhythms with contraceptive pharmacokinetics to evaluate how dosing time affects ovulation suppression. Daytime dosing reduced the required ethinyl estradiol dose by about 6% and dienogest dose by about 52% compared with evening dosing, mainly through better alignment with luteinizing hormone production peaks. An optimized nonconstant regimen further reduced the total ethinyl estradiol dose by about 67% and decreased intake days from 21 to 8, suggesting a chronopharmacological strategy for safer and more efficient oral contraception.",
+      "ko": "현재의 경구피임제 복용 전략은 호르몬 분비와 약물 대사에 영향을 주는 일주기 리듬을 거의 고려하지 않는다. 우리는 일주기 호르몬 리듬과 피임제 약동학을 통합한 수학 모델을 개발하여 복용 시간이 배란 억제 효과에 미치는 영향을 분석했다. 주간 복용은 야간 복용에 비해 필요한 ethinyl estradiol 용량을 약 6%, dienogest 용량을 약 52% 줄였으며, 이는 주로 약물 농도 피크와 황체형성호르몬 생성 피크의 정렬 효과 때문이었다. 또한 최적화된 비상수 복용 전략은 총 ethinyl estradiol 용량을 약 67% 줄이고 복용일 수를 21일에서 8일로 낮춰, 더 안전하고 효율적인 경구피임제 설계를 위한 시간약리학적 전략을 제시한다.",
+      "fr": "Les schémas actuels de contraception orale tiennent rarement compte des rythmes hormonaux circadiens, malgré leur influence sur la sécrétion hormonale et le métabolisme des médicaments. Nous avons développé un modèle mathématique intégrant les rythmes circadiens et la pharmacocinétique contraceptive afin d'évaluer l'effet de l'heure de prise sur la suppression de l'ovulation. Une prise en journée a réduit la dose requise d'éthinylestradiol d'environ 6 % et celle de diénogest d'environ 52 % par rapport à une prise le soir, principalement grâce à un meilleur alignement avec les pics de production de l'hormone lutéinisante. Un schéma non constant optimisé a encore réduit la dose totale d'éthinylestradiol d'environ 67 % et le nombre de jours de prise de 21 à 8, suggérant une stratégie chronopharmacologique pour une contraception orale plus sûre et plus efficace."
+    },
+    "thumbnail": "./publications/journal.pcbi.1014040.png",
+    "fetched_at": "2026-04-24T15:51:45.000Z",
+    "enhanced_at": "2026-04-24T15:51:45.000Z",
+    "pdf_file": "journal.pcbi.1014040.pdf",
+    "formatted_date": {
+      "en": "March 13, 2026",
+      "ko": "2026.03.13",
+      "fr": "13 Mars 2026"
+    },
+    "citations_updated_at": "2026-04-24T15:51:45.000Z",
+    "citations_last_checked": "2026-04-24T15:51:45"
   }
 ]
