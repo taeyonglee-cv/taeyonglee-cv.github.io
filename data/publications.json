@@ -20,7 +20,7 @@
       "fr": "18 Octobre 2024"
     },
     "citations_updated_at": "2025-07-17T00:30:15.156Z",
-    "citations_last_checked": "2026-07-07T01:42:50"
+    "citations_last_checked": "2026-07-08T01:16:25"
   },
   {
     "date": "2020-02-12",
@@ -43,7 +43,7 @@
       "fr": "12 Février 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-07-07T01:42:50"
+    "citations_last_checked": "2026-07-08T01:16:25"
   },
   {
     "date": "2021-04-08",
@@ -66,7 +66,7 @@
       "fr": "8 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-07-07T01:42:50"
+    "citations_last_checked": "2026-07-08T01:16:25"
   },
   {
     "date": "2021-03-29",
@@ -89,7 +89,7 @@
       "fr": "29 Mars 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-07-07T01:42:50"
+    "citations_last_checked": "2026-07-08T01:16:25"
   },
   {
     "date": "2020-10-26",
@@ -112,14 +112,14 @@
       "fr": "26 Octobre 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-07-07T01:42:50"
+    "citations_last_checked": "2026-07-08T01:16:25"
   },
   {
     "date": "2024-02-16",
     "title": "Prediction of effectiveness of universal rotavirus vaccination in Southwestern Vietnam based on a dynamic mathematical model",
     "journal": "Scientific Reports",
     "link": "https://doi.org/10.1038/s41598-024-54775-6",
-    "citations": 1,
+    "citations": 2,
     "summary": {
       "en": "Rotavirus causes a major disease burden in young children in Vietnam, but the national immunization program has yet to adopt universal RV vaccination due to concerns about lower vaccine effectiveness in low-income settings. We developed an age-stratified dynamic transmission model reflecting Vietnam's demographic change and calibrated it using hospitalization data from over 5,000 pediatric cases. Even with modest efficacy (55–85%), universal vaccination can cut hospitalizations by up to 50% over 10 years, with stronger protection in children aged 4–12 months and indirect benefits for those too young to be vaccinated. Our work supports policy decisions in LMICs, showing that rotavirus vaccination is a cost-justifiable and impactful intervention when guided by robust dynamic modeling.",
       "ko": "로타바이러스는 베트남 어린이들에게 큰 질병 부담을 주고 있다. 하지만 국가 예방접종 프로그램은 아직 저소득 지역에서의 백신 효과 저하에 대한 우려로 인해 보편적인 로타바이러스 백신 접종을 채택하지 않았다. 우리는 베트남의 인구 변화를 반영하는 연령 층화 동적 전파 모델을 개발하고, 5,000건 이상의 소아과 입원 데이터를 사용하여 이를 보정했다. 일반적인 효능(55-85%)에도 불구하고, 보편적 백신 접종은 10년 내 입원율을 최대 50%까지 줄일 수 있으며, 4-12개월 아동에서 더 강력한 보호 효과와 접종 대상이 아닌 어린 아이들에 대한 간접적 혜택을 보일 수 있다. 우리의 연구 결과는 강력한 동적 모델링에 기반한 로타바이러스 백신 접종이 저소득 중간소득 국가에서 비용 대비 효과적이고 영향력 있는 중재 방안임을 보여준다.",
@@ -135,7 +135,7 @@
       "fr": "16 Février 2024"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-07-07T01:42:50"
+    "citations_last_checked": "2026-07-08T01:16:25"
   },
   {
     "date": "2021-04-01",
@@ -158,7 +158,7 @@
       "fr": "1 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-07-07T01:42:50"
+    "citations_last_checked": "2026-07-08T01:16:25"
   },
   {
     "date": "2026-03-13",
@@ -181,6 +181,6 @@
       "fr": "13 Mars 2026"
     },
     "citations_updated_at": "2026-04-24T15:51:45.000Z",
-    "citations_last_checked": "2026-07-07T01:42:50"
+    "citations_last_checked": "2026-07-08T01:16:25"
   }
 ]
