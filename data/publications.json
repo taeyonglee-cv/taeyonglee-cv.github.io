@@ -4,7 +4,7 @@
     "title": "Constrained optimal control problem of oncolytic viruses in cancer treatment",
     "journal": "Mathematics and Computers in Simulation",
     "link": "https://doi.org/10.1016/j.matcom.2024.10.019",
-    "citations": 1,
+    "citations": 2,
     "summary": {
       "en": "Most models for oncolytic virotherapy overlook real-world constraints on virus administration schedule, limiting their clinical relevance. We formulated a constrained optimal control model with isoperimetric-type constraints and rigorously proved the existence of an optimal control using the Filippov–Cesari theorem. Beyond simulation, our work provides theoretical guarantees for optimal strategies, establishing a solid foundation for constrained cancer treatment planning. This dual theoretical–computational framework offers practical guidance for designing virus-based cancer therapies within realistic medical limits.",
       "ko": "대부분의 종양용해바이러스요법 모델은 실제 바이러스 투여량에 대한 제약을 무시하여 임상적 관련성이 제한적이다. 우리는 등적분 형태의 제약조건을 포함한 최적제어 모델을 수립하고, Filippov–Cesari 정리를 활용하여 최적 제어의 존재를 엄밀히 증명했다. 시뮬레이션 외에도 우리의 연구는 제약 조건 하의 최적 전략에 대한 이론적 보장을 제공하여 암 치료 계획을 위한 견고한 기반을 마련했다. 이 이론–계산 이중 체계는 현실적인 의학적 한계 내에서 바이러스 기반 암 치료법 설계를 위한 실용적인 지침을 제공한다.",
@@ -20,7 +20,7 @@
       "fr": "18 Octobre 2024"
     },
     "citations_updated_at": "2025-07-17T00:30:15.156Z",
-    "citations_last_checked": "2026-08-22T00:25:40"
+    "citations_last_checked": "2026-08-23T00:28:05"
   },
   {
     "date": "2020-02-12",
@@ -43,7 +43,7 @@
       "fr": "12 Février 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-08-22T00:25:40"
+    "citations_last_checked": "2026-08-23T00:28:05"
   },
   {
     "date": "2021-04-08",
@@ -66,7 +66,7 @@
       "fr": "8 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-08-22T00:25:40"
+    "citations_last_checked": "2026-08-23T00:28:05"
   },
   {
     "date": "2021-03-29",
@@ -89,7 +89,7 @@
       "fr": "29 Mars 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-08-22T00:25:40"
+    "citations_last_checked": "2026-08-23T00:28:05"
   },
   {
     "date": "2020-10-26",
@@ -112,7 +112,7 @@
       "fr": "26 Octobre 2020"
     },
     "citations_updated_at": "2025-07-17T23:18:08.903Z",
-    "citations_last_checked": "2026-08-22T00:25:40"
+    "citations_last_checked": "2026-08-23T00:28:05"
   },
   {
     "date": "2024-02-16",
@@ -135,7 +135,7 @@
       "fr": "16 Février 2024"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-08-22T00:25:40"
+    "citations_last_checked": "2026-08-23T00:28:05"
   },
   {
     "date": "2021-04-01",
@@ -158,7 +158,7 @@
       "fr": "1 Avril 2021"
     },
     "citations_updated_at": "2025-07-17T23:18:08.904Z",
-    "citations_last_checked": "2026-08-22T00:25:40"
+    "citations_last_checked": "2026-08-23T00:28:05"
   },
   {
     "date": "2026-03-13",
@@ -181,6 +181,6 @@
       "fr": "13 Mars 2026"
     },
     "citations_updated_at": "2026-04-24T15:51:45.000Z",
-    "citations_last_checked": "2026-08-22T00:25:40"
+    "citations_last_checked": "2026-08-23T00:28:05"
   }
 ]
